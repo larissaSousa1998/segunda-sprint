@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Synergy</title>
+
+    <link rel="shortcut icon" href="img/logo-simbolo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/grid-layout-index.css">
+    <link rel="stylesheet" href="css/menu-style.css">
+    <link rel="stylesheet" href="css/style-index.css">
+    <link rel="stylesheet" href="css/grid-layout-login.css">
+    <link rel="stylesheet" href="css/style-login.css">
+
+    <link href="css/font-awesome-css/all.css" rel="stylesheet"/>
+    <link href="css/font-awesome-css/fontawesome.css" rel="stylesheet">
+    <link href="css/font-awesome-css/brands.css" rel="stylesheet">
+    <link href="css/font-awesome-css/solid.css" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- CABEÇALHO -->
+    <header id='header'>
+
+        <nav id='nav-menu'>
+
+            <div id='div-logo-menu'>
+                <h1>
+                    <img src="img/logo-simbolo.png" alt="logo da empresa" id='logo-menu'>
+                    <h2>SYNERGY</h2>
+                </h1> 
+            </div>
+
+            <ul id='menu-site' class='menu'>
+                <li class='item-menu'> <a href="#header" class='menu-link active'>HOME</a> </li>
+                <li class='item-menu'> <a href="#section-empresa" class='menu-link'>SOBRE NÓS</a> </li>
+                <li class='item-menu'> <a href="#section-projeto" class='menu-link'>PROJETO</a> </li>
+                <li class='item-menu'> <a href="#section-equipe" class='menu-link'>EQUIPE</a> </li>
+                <li class='item-menu'> <a href="#section-contato" class='menu-link'>CONTATO</a> </li>
+            </ul>
+
+            <ul id='menu-login' class='menu'>
+                <li class='item-menu'><a href="../simulador/simuladorFinanceiro.html" class='page-link active'>SIMULADOR</a> </li>
+                <li class='item-menu'><a href="#modal-login" class='page-link active'>LOGIN</a> </li>
+                <li class='item-menu menu-button'> <a href="#" class='page-link'>CADASTRO</a> </li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id='main-content'>
+
+        <!-- IMAGEM INICIAL -->
+        <div id='home'>
+            <div class="section-intro">
+                <h2 class='section-title'>SYNERGY</h2>
+                <p class='description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos totam minus ipsa necessitatibus temporibus consequuntur numquam, aliquam iste velit perspiciatis natus repudiandae voluptates veniam. Eaque corrupti itaque vero quisquam possimus?</p>
+                <button href="#section-empresa" class='menu-link'>VER MAIS</button>
+            </div>
+            <div class="imagem-home">
+            </div>
+        </div>
+
+        <!-- SEÇÂO SOBRE A EMPRESA -->
+        <section id='section-empresa' class='section'>
+            <div class="section-image">
+                <img src="img/undraw_noted_pc9f.png" alt="Mulher sentada em um notebook" class='img-section-image'>
+            </div>
+
+            <div class="section-intro">
+                <h2 class='section-title'>SOBRE A SYNERGY</h2>
+
+                <p class='description'>A Sinergy nasceu no ano de 2020 através de um projeto financiado pela Faculdade Bandtec com o propósito de construir soluções em técnologia para órgaos e empresas em diversificados ramos, utilizando para isso, o que há de mais novo ou consolidado no mercado de desenvolvimento em T.I.</p>
+            </div>
+
+            <div class='content'>
+                <div class='div-mvs'>
+                    <div class="mvs-icon">
+                        <img src="img/mission.svg" alt="Icone de alvo">
+                    </div>
+
+                    <h3 class='mvs-title'>Missão</h3>
+                    <p class='mvs-p'>Oferecer soluções em T.I com alta qualidade e desempenho.<p>
+                </div>
+
+                <div class='div-mvs'>
+                    <div class="mvs-icon">
+                        <img src="img/vision.svg" alt="Icone de olho">
+                    </div>
+
+                    <h3 class='mvs-title'>Visão</h3>
+                    <p class='mvs-p'>A curto prazo visamos ser referência no ramo tecnógico no bairro da Paulista.<p>
+                </div>
+
+                <div class='div-mvs'>
+                    <div class="mvs-icon">
+                        <img src="img/diamond.svg" alt="Icone de diamante">
+                    </div>
+
+                    <h3 class='mvs-title'>Valores</h3>
+                    <p class='mvs-p'>Nossos principais valores são: Integridade, ética e foco nos resultados.</p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SOBRE O PROJETO -->
+        <section id='section-projeto' class='section'>
+            <div class="section-intro">
+                <h2 class='section-title'>NOSSO PROJETO</h2>
+
+                <p class='description'>O Flow surge com a missão de ligar técnologia e informação para o sistema metroviário, assegurando que dados importantes sejam compartilhados para seus usuários, prestando serviço de qualidade e eficiência e agregando benefício para tomada de decisões. A excelencia do nosso serviço é dada com a funcionalidade de sensores para com fim agregar valores para atingir nosso objetivo principal, desenvolver soluções informatizadas para empresas de pequeno, médio e grande porte.</p>
+
+                <div class="image-intro"></div>
+            </div>
+            <div class="section-image">
+                <div class="galeria">
+                    <div class="foto">
+                        <a href="#abrirModal-foto" onclick="imagemModal(0)">
+                            <div class="foto1">
+                                <div class="efeito-foto">
+                                    <img src="img/mais.png" style="width: 80px;" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div> 
+                    <div class="foto">
+                        <a href="#abrirModal-foto" onclick="imagemModal(1)">
+                            <div class="foto2">
+                                <div class="efeito-foto">
+                                    <img src="img/mais.png" style="width: 80px;" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>                
+                </div>
+                <div class="galeria">
+                    <div class="foto">
+                        <a href="#abrirModal-foto" onclick="imagemModal(2)">
+                            <div class="foto3">
+                                <div class="efeito-foto">
+                                    <img src="img/mais.png" style="width: 80px;" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div> 
+                    <div class="foto">
+                        <a href="#abrirModal-foto" onclick="imagemModal(3)">
+                            <div class="foto4">
+                                <div class="efeito-foto">
+                                    <img src="img/mais.png" style="width: 80px;" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>                
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SOBRE A EQUIPE -->
+        <section id='section-equipe' class='section'>
+            <div class="section-intro">
+                <h2 class='section-title'>CONHEÇA NOSSA EQUIPE</h2>
+
+                <p class='section-subtitle'>Essas são as pessoas que fazem esse projeto acontecer!</p>
+            </div>
+
+            <div class="content">
+                <div class="div-membro">
+                    <div class="photo-membro">
+                        <div class='img-photo-membro'>
+                            <img src="img/undraw_male_avatar_323b.png" alt="Foto de Christian Raphael" class='img-membro'>
+                        </div>
+                    </div>
+
+                    <div class="name-membro">
+                        <h3 class="name">Christian Raphael</h3>
+                        <p class="funtion">Desenvolvedor</p>
+                    </div>
+
+                    <div class="social-medias">
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/facebook.svg" alt="Facebook" class='social-media-icon'>
+                            </a>
+                        </div> 
+
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/cat.svg" alt="GitHub" class='social-media-icon'>
+                            </a>
+                        </div>
+
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/linkedin.svg" alt="Linkedin" class='social-media-icon'>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div-membro">
+                    <div class="photo-membro">
+                        <div class='img-photo-membro'>
+                            <img src="img/undraw_male_avatar_323b.png" alt="Foto de Gustavo Henrique" class='img-membro'>
+                        </div>
+                    </div>
+
+                    <div class="name-membro">
+                        <h3 class="name">Gustavo Henrique</h3>
+                        <p class="funtion">Desenvolvedor</p>
+                    </div>
+
+                    <div class="social-medias">
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/facebook.svg" alt="Facebook" class='social-media-icon'>
+                            </a>
+                        </div> 
+
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/cat.svg" alt="GitHub" class='social-media-icon'>
+                            </a>
+                        </div>
+
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/linkedin.svg" alt="Linkedin" class='social-media-icon'>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div-membro">
+                    <div class="photo-membro">
+                        <div class='img-photo-membro'>
+                            <img src="img/undraw_female_avatar_w3jk.png" alt="Foto de Larissa Custodio" class='img-membro'>
+                        </div>
+                    </div>
+
+                    <div class="name-membro">
+                        <h3 class="name">Larissa Custodio</h3>
+                        <p class="funtion">Desenvolvedora</p>
+                    </div>
+
+                    <div class="social-medias">
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/facebook.svg" alt="Facebook" class='social-media-icon'>
+                            </a>
+                        </div> 
+
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/cat.svg" alt="GitHub" class='social-media-icon'>
+                            </a>
+                        </div>
+
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/linkedin.svg" alt="Linkedin" class='social-media-icon'>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div-membro">
+                    <div class="photo-membro">
+                        <div class='img-photo-membro'>
+                            <img src="img/undraw_male_avatar_323b.png" alt="Foto de Lucas Matheus" class='img-membro'>
+                        </div>
+                    </div>
+
+                    <div class="name-membro">
+                        <h3 class="name">Lucas Matheus</h3>
+                        <p class="funtion">Desenvolvedor</p>
+                    </div>
+
+                    <div class="social-medias">
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/facebook.svg" alt="Facebook" class='social-media-icon'>
+                            </a>
+                        </div> 
+
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/cat.svg" alt="GitHub" class='social-media-icon'>
+                            </a>
+                        </div>
+
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/linkedin.svg" alt="Linkedin" class='social-media-icon'>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div-membro">
+                    <div class="photo-membro">
+                        <div class='img-photo-membro'>
+                            <img src="img/undraw_male_avatar_323b.png" alt="Foto de Wellington Pereira" class='img-membro'>
+                        </div>
+                    </div>
+
+                    <div class="name-membro">
+                        <h3 class="name">Wellington Pereira</h3>
+                        <p class="funtion">Desenvolvedor</p>
+                    </div>
+
+                    <div class="social-medias">
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/facebook.svg" alt="Facebook" class='social-media-icon'>
+                            </a>
+                        </div> 
+
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/cat.svg" alt="GitHub" class='social-media-icon'>
+                            </a>
+                        </div>
+
+                        <div class='div-social-media'>
+                            <a href="#">
+                                <img src="img/linkedin.svg" alt="Linkedin" class='social-media-icon'>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÁREA DE CONTATO -->
+        <section id='section-contato' class='section'>
+           
+            <div class="area-contato">
+                <div class="section-image">
+                    <img src="img/undraw_newsletter_vovu.png" alt="Homem e um envelope com uma carta" class='img-section-image'>
+                </div>
+
+                <div class="content">
+                    <div class="section-intro">
+                        <h2 class='section-title'>FALE CONOSCO</h2>
+                    </div>
+                
+                    <div class="contato-form">
+                        <form>
+                            <div class="form-area">
+                                <i class="fas fa-user contato-input-icon"></i>
+                                <input type="text" placeholder="Nome" id='nome' class='input'>
+                            </div>
+
+                            <div class="form-area">
+                                <i class="fas fa-envelope contato-input-icon"></i>
+                                <input type="email" placeholder="Email" id='email' class='input'>
+                            </div>
+
+                            <div class="form-area">
+                                <textarea name="mensagem" id="mensagem" class='text-area' placeholder="Digite aqui..." rows="5"></textarea>
+                            </div>
+
+                            <div class="form-area">
+                                <button type="submit" class='submit-btn'>Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            
+        </section>
+
+    </main>
+
+        <div id="modal-login">
+            <div id="mid">
+                
+                <!-- SECTION DA IMAGEM DA ESQUERDA -->
+                <section id="section-img">
+                    <div id="div-section-img">
+                        <div id="div-logo">
+                            
+                        </div>
+                    </div>
+                </section>
+    
+                <!-- SECTION DO LOGIN -->
+                <section id="section-login">
+                        <a href="#fechar" title="Fechar" class="fechar"><i class="fas fa-times"></i></a>
+    
+                    <!-- CONTEÚDO DENTRO DA SECTION LOGIN -->
+                    <div id="corpo-login">
+    
+                        <div id="div-img">
+                            <p>BEM-VINDO</p>
+                            <img src="img/undraw_dev_focus_b9xo.png" alt="Moça utilizando o computador" class='welcome-img'> 
+                            <p class='welcome-text'>Olá! Realize seu login preenchendo os campos abaixo</p>
+                        </div>
+    
+                        <!-- FORMULÁRIO LOGIN -->
+                        <div id="form-login">
+    
+                            <div class='div-input'>
+                                <input type="text" class="input-login" placeholder="Login">
+                            </div>
+    
+                            <div class='div-input'>
+                                <input type="password" class="input-login" placeholder="Senha">
+                            </div>
+    
+                            <div class='div-input'>
+                                <button class="btn-login" id="id-btn">Entrar</button>
+                            </div>
+    
+                            <p>
+                                <a href="#" class='form-link'>Esqueci a senha | </a> 
+                                <a href="#" class="form-link"> Cadastre-se</a>
+                            </p>
+    
+                        </div>
+                    </div>    
+                </section>
+            </div>
+        </div>
+
+        <!-- MODAL FOTO -->
+        <div id="abrirModal-foto" class="modal">
+            <button id="anterior"onclick="ant()"><i class="fas fa-angle-left"></i></button>
+            <div id="fotomodal">
+                <a href="#fechar" title="Fechar" class="fechar-modal-foto">
+                    <i class="fas fa-times"></i>
+                </a>
+            </div>
+            <button id="proximo"  onclick="prox()"><i class="fas fa-angle-right"></i></button>
+        </div>
+
+    <!-- RODAPÉ -->
+    <footer id='footer'>
+        <div class='footer-topic'>
+            <ul class='list-sections'>
+                <h3>Sobre Nós</h3>
+                <li>Nossa empresa</li>
+                <li>Nossa equipe</li>
+                <li>Entre em contato</li>
+            </ul>
+        </div>
+
+        <div class='footer-topic'>
+            <ul class='list-sections'>
+                <h3>Nosso Projeto</h3>
+                <li>Sobre a idéia</li>
+                <li>Simulador financeiro</li>
+                <li>Login / Cadastro</li>
+            </ul>
+        </div>
+
+        <div class='footer-topic'>
+            <ul class='list-sections'>
+                <h3>Nos siga</h3>
+                <li class='li-footer-media'>
+                    <a href="#">
+                        <img src="img/facebook.svg" alt="Facebook" class='social-media-icon'>
+                    </a>
+                </li>
+                <li class='li-footer-media'>
+                    <a href="#">
+                        <img src="img/linkedin.svg" alt="Linkedin" class='social-media-icon'>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/menu-animation.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+</html>
+

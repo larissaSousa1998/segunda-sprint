@@ -1,0 +1,50 @@
+body {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer"
+    ;
+}
+
+#header {
+    grid-area: header;
+}
+
+#main-content {
+    grid-area: main;
+    display: grid;
+    grid-template-areas: 
+        "home"
+        "section-empresa"
+        "section-projeto"
+        "section-equipe"
+        "section-contato"
+    ;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+/* SEÇÕES */
+
+#home {
+    grid-area: home;
+}
+
+#section-empresa {
+    grid-area: section-empresa;
+}
+
+#section-projeto {
+    grid-area: section-projeto;
+}
+
+#section-equipe {
+    grid-area: section-equipe;
+}
+
+#section-contato {
+    grid-area: section-contato;
+}

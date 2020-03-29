@@ -1,0 +1,15 @@
+div#mid {
+    display: grid;
+    grid-template-areas: 
+        "imagem login"
+    ;
+    grid-template-columns: 2fr 1fr;
+}
+
+section#section-img {
+    grid-area: imagem;
+}
+
+section#section-login {
+    grid-area: login;
+}

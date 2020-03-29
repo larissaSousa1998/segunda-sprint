@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simulador Financeiro</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="../site-institucional/css/font-awesome-css/all.css" rel="stylesheet"/>
+    <link href="../site-institucional/css/font-awesome-css/fontawesome.css" rel="stylesheet">
+    <link href="../site-institucional/css/font-awesome-css/brands.css" rel="stylesheet">
+    <link href="../site-institucional/css/font-awesome-css/solid.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+<div id='simulador'>
+    <div id='voltar'>
+        <a href="">
+            <i class="fas fa-arrow-left icon"></i>
+        </a>
+    </div>
+
+    <div id='header'>
+        <h2 class="titulo">DESCUBRA QUAL SERÁ O SEU RETORNO AO UTILIZAR NOSSA PLATAFORMA</h2>
+    </div>
+    
+
+    <div id="form">
+        <div class='div-input-form'>
+            <span>Lucro mensal em R$:</span> 
+            <input type="text" name="" id="lucroMensal" class='input'><br>
+        </div>
+    
+        <div class='div-input-form'>
+            <span>Média de clientes:</span> 
+            <input type="text" name="" id="qtdcliente" class='input'>
+        </div> 
+    </div>
+
+    <div id='botoes'>
+        <p>Escolha uma linha do metrô de São Paulo de sua preferência</p>
+
+        <div class='div-linhas'>
+            <img class="imagem-linha" src="img/linhaazul.png" alt="Linha Azul" onclick="linhaAzul()">
+            <img class="imagem-linha" src="img/linhaverde.png" alt="Linha Verde"  onclick="linhaVerde()">
+            <img class="imagem-linha" src="img/linhavermelha.png" alt="Linha Vermelha" onclick="linhaVermelha()">
+            <img class="imagem-linha" src="img/linhaamarela.png" alt="Linha Amarela" onclick="linhaAmarela()">
+            <img class="imagem-linha" src="img/linhalilas.png" alt="Linha Lilas" onclick="linhaLilas()">
+        </div>
+    </div>
+
+    <div id="resultadoSimulacao">
+
+        <h2 class="titulo">RESULTADO</h2>
+
+        <div id="resultados">
+
+            <div id="impacto" class='topico-resultado'></div>
+            
+            <div id="influencia" class='topico-resultado'></div>
+    
+            <div id="cliente" class='topico-resultado'></div>
+    
+            <div id="venda" class='topico-resultado'></div>
+    
+        </div>
+    
+        <div id="descricaoLinha">
+        </div>
+        
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+
+    function linhaVerde(){
+        resultadoSimulacao.style.display = "grid";
+        descricaoLinha.innerHTML = '<p class="desc">A Linha 2–Verde do Metrô de São Paulo é constituída pelo trecho compreendido entre as estações Vila Madalena e Vila Prudente. A linha é também chamada de Linha da Paulista, por percorrer a Avenida Paulista, um dos principais centros financeiros de São Paulo. Apesar de ser chamada de Linha 2, ela foi a terceira a ser construída e atualmente recebe o fluxo em média 714.454 pessoas por dia útil</p> <img src="img/linhaVerdeMetro.jpg" alt="" class="imagem-resultado">';
+        var nimpactados = 0.82 * 714454; // numero de pessoas impactadas = 82% de 714.454 pessoas que passam em média na linha verde
+        var nlembram = nimpactados * 0.59; //numero de pessoas que lembram do anuncio = 59% de pessoas impactadas
+        var ninfluenciados = nimpactados * 0.15; //numero de pessoas influenciadas pelo anuncio = 15% de pessoas impactadas
+        var novosclientes = nimpactados * 0.06; // numero de novos clientes = 6% de pessoas impactadas
+        var compradores = novosclientes * 0.01; // numero de compradores = 1% de pessoas que podem ser possíveis clientes
+        var rporcliente = lucroMensal.value / qtdcliente.value; // renda por cliente = lucro mensal / quantidade de clientes
+        var aumento = Number(lucroMensal.value) + (rporcliente * compradores); // o aumento é dado pelo lucro mensal + a renda por cliente
+        
+        impacto.style.display = "block";
+        impacto.innerHTML = "<img src='img/influencia.png' alt='' height='60px' style=''> Você pode impactar até <b>"+parseInt(nimpactados)+" pessoas</b> com a sua propaganda.";
+        influencia.style.display = "block";
+        influencia.innerHTML = "<img src='img/olho.png' alt='' height='60px' style=''> <b>"+parseInt(nlembram)+" pessoas lembrarão</b> do seu anúncio e <b>"+parseInt(ninfluenciados)+" serão influenciadas</b> por ele.";
+        cliente.style.display = "block";
+        cliente.innerHTML = "<img src='img/clientes.png' alt='' height='60px' style=''> Alcance até <b>"+parseInt(novosclientes)+" novos clientes.</b>";
+        venda.style.display = "block";
+        venda.innerHTML = "<img src='img/retorno.png' alt='' height='60px' style=''> Aumente suas vendas em até <b>R$ "+parseInt(aumento)+"</b> por mês.";
+
+    }
+
+    function linhaAzul(){
+        resultadoSimulacao.style.display = "grid";
+        descricaoLinha.innerHTML = '<p class="desc">A Linha 1–Azul do Metrô de São Paulo, denominada originalmente Linha Norte–Sul, compreende o trecho definido pelas estações Tucuruvi e Jabaquara. Esta foi a primeira linha construída pelo Metrô inaugurada do começo dos anos 1970. É linha mais movimentada do metrô e por lá pode passar em média 1.440.454 pessoas por dia útil</p> <img src="img/linhaAzulMetro.jpg" alt="" class="imagem-resultado">';
+        var nimpactados = 0.82 * 1440454;
+        var nlembram = nimpactados * 0.59;
+        var ninfluenciados = nimpactados * 0.15;
+        var novosclientes = nimpactados * 0.06;
+        var compradores = novosclientes * 0.01;
+        var rporcliente = lucroMensal.value / qtdcliente.value;
+        var aumento = Number(lucroMensal.value) + (rporcliente * compradores);
+        
+        impacto.style.display = "block";
+        impacto.innerHTML = "<img src='img/influencia.png' alt='' height='60px' style=''> Você pode impactar até <b>"+parseInt(nimpactados)+" pessoas</b> com a sua propaganda.";
+        influencia.style.display = "block";
+        influencia.innerHTML = "<img src='img/olho.png' alt='' height='60px' style=''> <b>"+parseInt(nlembram)+" pessoas lembrarão</b> do seu anúncio e <b>"+parseInt(ninfluenciados)+" serão influenciadas</b> por ele.";
+        cliente.style.display = "block";
+        cliente.innerHTML = "<img src='img/clientes.png' alt='' height='60px' style=''> Alcance até <b>"+parseInt(novosclientes)+" novos clientes.</b>";
+        venda.style.display = "block";
+        venda.innerHTML = "<img src='img/retorno.png' alt='' height='60px' style=''> Aumente suas vendas em até <b>R$ "+parseInt(aumento)+"</b> por mês.";
+        
+          
+
+    }
+
+    function linhaVermelha(){
+        resultadoSimulacao.style.display = "grid";
+        descricaoLinha.innerHTML = '<p class="desc">A Linha 3–Vermelha do Metrô de São Paulo compreende o trecho da rede metropolitana definida entre as estações Palmeiras–Barra Funda e Corinthians–Itaquera. Antigamente chamava-se Linha Leste–Oeste. Suas estações são bastante movimentadas podendo passar em média 1.413.727 pessoas por dia.</p> <img src="img/linhaVermelhaMetro.jpeg" alt="" class="imagem-resultado">';
+        var nimpactados = 0.82 * 1413727;
+        var nlembram = nimpactados * 0.59;
+        var ninfluenciados = nimpactados * 0.15;
+        var novosclientes = nimpactados * 0.06;
+        var compradores = novosclientes * 0.01;
+        var rporcliente = lucroMensal.value / qtdcliente.value;
+        var aumento = Number(lucroMensal.value) + (rporcliente * compradores);
+        
+        impacto.style.display = "inline-block";
+        impacto.innerHTML = "<img src='img/influencia.png' alt='' height='60px' style=''> Você pode impactar até <b>"+parseInt(nimpactados)+" pessoas</b> com a sua propaganda.";
+        influencia.style.display = "block";
+        influencia.innerHTML = "<img src='img/olho.png' alt='' height='60px' style=''> <b>"+parseInt(nlembram)+" pessoas lembrarão</b> do seu anúncio e <b>"+parseInt(ninfluenciados)+" serão influenciadas</b> por ele.";
+        cliente.style.display = "block";
+        cliente.innerHTML = "<img src='img/clientes.png' alt='' height='60px' style=''> Alcance até <b>"+parseInt(novosclientes)+" novos clientes.</b>";
+        venda.style.display = "block";
+        venda.innerHTML = "<img src='img/retorno.png' alt='' height='60px' style=''> Aumente suas vendas em até <b>R$ "+parseInt(aumento)+"</b> por mês.";
+
+    }
+
+    function linhaAmarela(){
+        resultadoSimulacao.style.display = "grid";
+        descricaoLinha.innerHTML = '<p class="desc">A Linha 4–Amarela do Metrô de São Paulo, compreenderá, quando finalizada, o trecho definido pelas estações Luz e Vila Sônia. É administrada pela empresa ViaQuatro, é a primeira linha de São Paulo a ser operada pela iniciativa privada. Pode ter em média até 782.454 passageiros por dia útil</p> <img src="img/linhaAmarelaMetro.jpg" alt="" class="imagem-resultado">';
+        var nimpactados = 0.82 * 782454;
+        var nlembram = nimpactados * 0.59;
+        var ninfluenciados = nimpactados * 0.15;
+        var novosclientes = nimpactados * 0.06;
+        var compradores = novosclientes * 0.01;
+        var rporcliente = lucroMensal.value / qtdcliente.value;
+        var aumento = Number(lucroMensal.value) + (rporcliente * compradores);
+        
+        impacto.style.display = "block";
+        impacto.innerHTML = "<img src='img/influencia.png' alt='' height='60px' style=''> Você pode impactar até <b>"+parseInt(nimpactados)+" pessoas</b> com a sua propaganda.";
+        influencia.style.display = "block";
+        influencia.innerHTML = "<img src='img/olho.png' alt='' height='60px' style=''> <b>"+parseInt(nlembram)+" pessoas lembrarão</b> do seu anúncio e <b>"+parseInt(ninfluenciados)+" serão influenciadas</b> por ele.";
+        cliente.style.display = "block";
+        cliente.innerHTML = "<img src='img/clientes.png' alt='' height='60px' style=''> Alcance até <b>"+parseInt(novosclientes)+" novos clientes.</b>";
+        venda.style.display = "block";
+        venda.innerHTML = "<img src='img/retorno.png' alt='' height='60px' style=''> Aumente suas vendas em até <b>R$ "+parseInt(aumento)+"</b> por mês.";
+
+    }
+
+    function linhaLilas(){
+        resultadoSimulacao.style.display = "grid";
+        descricaoLinha.innerHTML = '<p class="desc">A Linha 5–Lilás do Metrô de São Paulo compreende o trecho definido pelas estações Capão Redondo e Chácara Klabin, cujo trajeto tem 20,0 quilômetros de extensão. Pode atingir em média 563.363 passageiros por dia útil</p> <img src="img/linhaLilasMetro.jpeg" alt="" class="imagem-resultado">';
+        var nimpactados = 0.82 * 563363;
+        var nlembram = nimpactados * 0.59;
+        var ninfluenciados = nimpactados * 0.15;
+        var novosclientes = nimpactados * 0.06;
+        var compradores = novosclientes * 0.01;
+        var rporcliente = lucroMensal.value / qtdcliente.value;
+        var aumento = Number(lucroMensal.value) + (rporcliente * compradores);
+        
+        impacto.style.display = "block";
+        impacto.innerHTML = "<img src='img/influencia.png' alt='' height='60px' style=''> Você pode impactar até <b>"+parseInt(nimpactados)+" pessoas</b> com a sua propaganda.";
+        influencia.style.display = "block";
+        influencia.innerHTML = "<img src='img/olho.png' alt='' height='60px' style=''> <b>"+parseInt(nlembram)+" pessoas lembrarão</b> do seu anúncio e <b>"+parseInt(ninfluenciados)+" serão influenciadas</b> por ele.";
+        cliente.style.display = "block";
+        cliente.innerHTML = "<img src='img/clientes.png' alt='' height='60px' style=''> Alcance até <b>"+parseInt(novosclientes)+" novos clientes.</b>";
+        venda.style.display = "block";
+        venda.innerHTML = "<img src='img/retorno.png' alt='' height='60px' style=''> Aumente suas vendas em até <b>R$ "+parseInt(aumento)+"</b> por mês.";
+
+    }
+</script>
