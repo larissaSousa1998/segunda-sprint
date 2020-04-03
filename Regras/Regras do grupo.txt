@@ -1,0 +1,30 @@
+Regras da Sprint 2
+
+- Todas as reuniões terão registro e presença, caso
+a tolerância seja quebrada, será aplicado um feedback
+no participante em questão;
+- Presença: Caso algum participante não compareça
+ à reunião em questão, o grupo tem a liberdade de tomar
+decisões relevantes, contanto que ao menos 4 participantes
+estejam presentes; 
+- Reuniões toda Terça, Quinta e Sexta às 12h (sujeito 
+a ajustes provisórios de acordo com a necessidade);
+- a ATA de todas as reuniões é obrigatória (dependencia
+do scrum master, ou do lider eleito durante a reunião);
+- Em caso de discordância em opiniões, o Juiz de decisões
+tem o voto de desempate (informada na ATA da reunião);
+- Incentivo e apoio devem ser mútuos, os participantes
+devem se apoiar para o progresso do grupo, apontando
+erros e acertos de maneira construtivas e priorizando 
+o projeto;
+- A cada inicio de reunião, haverá espaço para feedback,
+onde os participantes irão se expressar cajo haja algum
+descontentamento que interfira diretamente na continuidade
+do projeto;
+- Toda alteração no projeto deverá ser sinalizada no grupo
+do whatsapp, e comentada no GitHub de maneira clara;
+- Alterações que afetem muito a entrega do projeto
+(esteja muito em cima do prazo de entrega, ou que compro-
+meta a qualidade da apresentação) devem passar por votação;
+- Caso uma ideia seja desaprovada pelo grupo, o participante
+em questão não deve insistir em inseri-lá no projeto;
