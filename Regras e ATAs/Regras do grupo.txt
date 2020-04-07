@@ -28,3 +28,6 @@ do whatsapp, e comentada no GitHub de maneira clara;
 meta a qualidade da apresentação) devem passar por votação;
 - Caso uma ideia seja desaprovada pelo grupo, o participante
 em questão não deve insistir em inseri-lá no projeto;
+- A tolerância de entrada na call de reunião é de 10 minutos, 
+caso o tempo seja excedido, os participantes ausentes sem justificativa
+serão registrados e, caso entrem após o horário, contabilizará um atraso.

@@ -1,0 +1,9 @@
+Título: Sprint 1 - Reunião 2
+Data: 07/04/2020 12:00/13:12
+Presentes: 
+Homologação: Nesta reunião, cada participante expos o que produziu durante a 
+semana, tirou duvidas, ocorreu um ajuste no backlog, implementação do sistema
+Fibonacci, Ajuste do banco de dados, atualizações do desenvolvimento do dashboard
+e criamos regras adicionais, não pensadas anteriormente.
+Comentários:
+Justificativa de falta/atrasado de entrega: 
