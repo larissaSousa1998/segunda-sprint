@@ -1,0 +1,12 @@
+Título: Sprint 2 - Reunião 3
+Data: 09/04/2020 - 13:00/13:50
+Presentes: Todos, exceto o Lucas
+Homologação: durante essa reunião foi decretada uma alteração no horario das
+reuniões de quinta e sexta, de 12:00 para 13:00, mantendo o horario  na terça,
+pois a aula durante os outros dias começa mais tarde (adicionado as regras).  
+Discutimos sobre ajustes gerais no site institucional. tiramos as dúvidas 
+gerais sobre o projeto (alterações no git, contextualização e site), 
+verificamos todas as opiniões sobre o andamento do projeto. 
+Comentários: 
+Justificativa de falta/atrasado de entrega: Lucas avisou previamente
+que teria que faltar pois iria até a faculdade resolver assuntos pessoais.

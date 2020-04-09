@@ -7,7 +7,7 @@ no participante em questão;
  à reunião em questão, o grupo tem a liberdade de tomar
 decisões relevantes, contanto que ao menos 4 participantes
 estejam presentes; 
-- Reuniões toda Terça, Quinta e Sexta às 12h (sujeito 
+- Reuniões toda Terça às 12h, e Quinta e Sexta às 13h (sujeito 
 a ajustes provisórios de acordo com a necessidade);
 - a ATA de todas as reuniões é obrigatória (dependencia
 do scrum master, ou do lider eleito durante a reunião);
