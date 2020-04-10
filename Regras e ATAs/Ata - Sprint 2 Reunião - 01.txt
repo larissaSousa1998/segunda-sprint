@@ -1,0 +1,13 @@
+Título: Sprint 2 - Reunião 1
+Data: 10/04/2020 13:00/13:55
+Presentes: todos
+Homologação: Diante da reunião com o professor no dia 09/04, deixamos o lucas a
+parte de tudo que foi discutido e realizado, o grupo começou a se organizar 
+para a apresentação dos entregáveis solicitados, e após uma discussão chegamos 
+ao concenso de que o Lucas e a Larissa (que ja possuem mais noção de backend)
+ficarão responsáveis pela prototipação da dashboard, o Gabriel e o João irão 
+programar a página de login e de cadastro do site, a Julia e a Isabella irão 
+modificar o site institucional, para ajustá-lo de acordo com a nova proposta do
+projeto.
+Comentários:
+Justificativa de falta/atrasado de entrega: 
