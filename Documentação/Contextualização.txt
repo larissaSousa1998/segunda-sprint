@@ -1,0 +1,37 @@
+O metrô de São Paulo é um sistema de transporte metroviário que serve
+a cidade de São Paulo. Ele é operado pela companhia do Metropolitano 
+de São Paulo, empresa de capital misto que foi fundada em 24 de abril
+de 1968. Ela é responsável por todo planejamento, projeto, construção 
+e adaptação do transporte metroviário em SP. A maior parte do controle
+acionário é associada ao governo do estado e integra também o grupo CCR
+por meio das concessionárias ViaQuatro e ViaMobilidade que operam respec_
+tivamente a linha 4(amarela) e 5 (lilás) do sistema.
+Ele é composto por 6 linhas que somam atualmemte 89,7 km de extensão e 79
+estações. Estima-se em média que a rede transporta cerca de 4,5 milhões de
+usuários por dia. Levando em conta a sua importância e também o fato dela
+integrar a cidade de São Paulo que é uma das cidades mais populosas do mundo,
+encontramos algumas lacunas de mercado que podem ser preenchidas atrvés
+do uso da tecnologia e de sistemas inteligentes criados pela nossa empresa.
+Em uma pesquisa realizada pelo Procon em novembro de 2019 constatou que a
+lotação é o maior problema do metrô para os seus usuários, uma vez que, a
+origem das falhas é o excesso de gente buscando um serviço incapaz de 
+atender todo mundo com conforto. Outro grande problema se encontra na má
+gestão ou a má preparação do próprio metrô na hora de receber um elevado
+número de pessoas em suas dependências uma vez que seu espaço como corre_
+dores, escadas rolantes, fluxos e contrafluxos cada vez mais cheios tornam
+a gestão e organização cada vez mais difíceis.
+Outro problema enfrentado diz respeito a lotações nas linhas em dias e 
+horários fora do esperado por motivos externos como por exemplo problemas
+nos trens e metros em linhas e estações próximas que causam um pico ines_
+perado e superlotam estações que não estão preparadas estratégicamente
+para esses eventos.
+Levando em conta esses dados apresentados, nossa solução é criar um sis_
+tema web que através da captação de dados de um sensor de presença mostre
+ao usuário informações pertinentes sobre o pico e movimentação nas depen_
+dências do metrô. Nosso objetivo é fornecer esses dados de modo eficiente
+através de diversas formas de consulta e a partir desses dados otimizar o
+processo de tomada de decisões.
+-Estratégica
+-Operacional
+-Mercadológica
+
