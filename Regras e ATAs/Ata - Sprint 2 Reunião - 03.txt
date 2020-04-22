@@ -1,0 +1,15 @@
+Título: Sprint 2 - Reunião 3
+Data: 16/04/2020 - 13:00/14:00
+Presentes: todos
+Homologação: O grupo todo tirou duvidas sobre as partes que cada um está realizando,
+além de demonstrar para o grupo cada coisa que acrescentou ao projeto nessas semanas.
+Lucas e Larissa apresentaram o modelo de dashboard, além de explicar o motivo de 
+cada item que é informado na tela. Demos opiniões sobre algumas alterações para
+realizar na dashboard, além de discutirmos sobre o que mais seria relevante 
+acrescentar. Isabella e Julia tiraram as dúvidas sobre o que poderiam e precisariam
+alterar no site institucional, além de explicar suas dificuldades em relação ao código
+do site, que está bem complexo. Gabriel e João também tinham duvidas em relação ao código,
+ e foi dada a ideia de testar a programação com um código zerado para testar essa 
+funcionalidade, antes de implementar efetivamente no código.
+Comentários: 
+Justificativa de falta/atrasado de entrega: 
