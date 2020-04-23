@@ -1,0 +1,5 @@
+Solução proposta:
+Levando em conta esses dados apresentados, nossa solução é criar um sistema web que através da captação de dados de um sensor de presença, mostre ao usuário informações pertinentes sobre o pico e movimentação nas dependências do metrô. Nosso objetivo é fornecer esses dados de modo eficiente através de diversas formas de consulta, e a partir desses dados otimizar o processo de tomada de decisões.
+-Estratégica
+-Operacional
+-Mercadológica
