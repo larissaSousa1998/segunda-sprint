@@ -435,22 +435,34 @@
     
                     <!-- CONTEÚDO DENTRO DA SECTION LOGIN -->
                     <div id="corpo-login">
-    
-                        <div id="div-img">
+
+                     <div id="div-top">
+                            <div id="div-img">
                             <p>BEM-VINDO</p>
+                            
                             <img src="img/undraw_dev_focus_b9xo.png" alt="Moça utilizando o computador" class='welcome-img'> 
                             <p class='welcome-text'>Olá! Realize seu login preenchendo os campos abaixo</p>
+                         </div>
+                    </div>
+
+                    <div id="div-top2">
+                        <div id="div-img">
+                            <p>Estamos quase lá</p>
+                            
+                            <img src="img/undraw_dev_focus_b9xo.png" alt="Moça utilizando o computador" class='welcome-img'> 
+                            <p class='welcome-text'>Olá! Realize seu cadastro preenchendo os campos abaixo</p>
                         </div>
-    
+                    </div>
                         <!-- FORMULÁRIO LOGIN -->
+                        <div id="remover-cadastro">
                         <div id="form-login">
-    
+                        
                             <div class='div-input'>
-                                <input type="text" class="input-login" placeholder="Login">
+                                <input type="text" class="input-login" id="emaillogin" placeholder="Login">
                             </div>
     
                             <div class='div-input'>
-                                <input type="password" class="input-login" placeholder="Senha">
+                                <input type="password" class="input-login" id="senhalogin" placeholder="Senha">
                             </div>
     
                             <div class='div-input'>
@@ -458,11 +470,39 @@
                             </div>
     
                             <p>
-                                <a href="#" class='form-link'>Esqueci a senha | </a> 
-                                <a href="#" class="form-link"> Cadastre-se</a>
+                                <span class='form-link'>Esqueci a senha | </span> 
+                                <span class="form-link" onclick="removerlogin()"> Cadastre-se</span>
                             </p>
     
                         </div>
+                    </div>
+
+                    <div id="altera-login">
+                        <div id="form-login">
+    
+                            <div class='div-input'>
+                                <input type="text"  id="emailcad" class="input-login" placeholder="E-mail">
+                            </div>
+
+                            <div class='div-input'>
+                                    <input type="password" id="senhacad"class="input-login" placeholder="Senha">
+                                </div>
+    
+                            <div class='div-input'>
+                                <input type="password" id="confirmacad" class="input-login" placeholder="Confirma Senha">
+                            </div>
+    
+                            <div class='div-input'>
+                                <button class="btn-login" id="id-cad">Cadastrar-se</button>
+                            </div>
+    
+                            <p>
+                                <span class='form-link'>Esqueci a senha | </span> 
+                                <span class="form-link" onclick="voltarlogin()">Logar-se</span>
+                            </p>
+    
+                        </div>
+                    </div>
                     </div>    
                 </section>
             </div>
