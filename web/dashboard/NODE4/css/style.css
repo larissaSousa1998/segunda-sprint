@@ -119,16 +119,16 @@ cursor: pointer;
     float: left;
     width: 40%;
     height: 250px;
-    background: rgba(226, 226, 226, 0.527);
     border-radius: 5px;
+    background: rgba(226, 226, 226, 0.527);
     display: flex;
-    flex-direction: column;
+
 }
 
 #grafico3{
     width: 100%;
     float: left;
-    height: 250px;
+    height: 300px;
     background: rgba(226, 226, 226, 0.527);
     border-radius: 5px;
     display: flex;
@@ -136,5 +136,27 @@ cursor: pointer;
 
 }
 
+.media-hora {
+    
+    margin-left: 100px;
+}
 
+.media {
+    float: left;
+    position: absolute;
+}
 
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#myChart {
+height: 100%;
+width: 100%;
+}
+
+.zc-ref {
+display: none;
+}
