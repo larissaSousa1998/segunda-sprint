@@ -1,0 +1,184 @@
+
+<!doctype html>
+<html>
+
+<head>
+	<title>Line Chart</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+		canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
+	</style>
+</head>
+
+<body>
+	
+	
+
+	 <nav class="menu">
+        <div class="item-menu" id="logo">
+            <h1>Flow</h1>
+        </div>
+
+        <div class="item-menu" id="active">
+                <i class="material-icons">dashboard</i> 
+                <p>Dashboard</p>
+        </div>
+
+
+        <div class="item-menu">
+                <i class="material-icons">person</i> 
+                <p>Perfil</p>
+        </div>
+
+        <div class="item-menu">
+                <i class="material-icons">description</i> 
+                <p>Relatórios</p>
+        </div>
+
+        <div class="item-menu">
+                <i class="material-icons">settings</i> 
+                <p>Configurações</p>
+        </div>
+    </nav>
+    
+
+    <section class="principal">
+        <div id="dashboard">
+            <div id="top">
+                <div id="esquerda">
+                    <h1>Estação Paulista</h1>
+                    <p>Dados em tempo real</p>
+                </div>
+                <div id="esquerda">
+                    <p>19:45</p>
+                </div>
+            </div>
+
+            <div id="grafico-topo">
+
+                <div id="grafico">
+						<section>
+								<h4><label id='average'></label></h4>
+								<h4> <label id='averageHour'></label></h4>
+							</section>
+					
+					<section style="width:100%">
+						<canvas id="chart"></canvas>
+					<section>
+				</div>
+                <div id="grafico2">
+					
+				</div>
+
+
+            </div>
+            
+            <div id="grafico-baixo">
+                <div id="grafico3"></div>
+            </div>
+        </div>
+
+
+
+
+    </section>
+</body>
+
+</html>
+
+<script>
+
+	var context = document.getElementById("chart").getContext("2d");
+	context.canvas.width = 1000;
+	context.canvas.height = 300;
+	
+	var configuration = {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: "Movimento x Time",
+				type: 'line',
+			}]
+		},
+		options: {
+			scales: {
+				xAxes: [{
+					//type: 'value',
+					distribution: 'series',
+					ticks: {
+						beginAtZero:true
+					}
+				}],
+				yAxes: [{
+					scaleLabel: {
+						display: true,
+						labelString: 'Fluxo de pessoas'
+					},
+					ticks: {
+						beginAtZero:true
+					}
+				}]
+			},
+			animation: {
+				duration: 0
+			}
+		}
+	};
+	
+	var chart = new Chart(context, configuration);
+
+	//Função para obter os dados de temperatura do server
+	//Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
+	
+	//Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
+	//hora de montar/atualizar o gráfico
+	this.lastIndexTemp = 0;
+	this.time = 0;
+
+	function get_data(){
+
+		var http = new XMLHttpRequest();
+		http.open('GET', 'http://localhost:3000/api', false);
+		http.send(null);        
+		
+		var obj = JSON.parse(http.responseText);
+		console.log(obj)
+		if (obj.data.length == 0){
+			return;
+		}
+
+		var _lastIndexTemp = this.lastIndexTemp;
+		this.lastIndexTemp = obj.data.length;
+		listTemp = obj.data.slice(_lastIndexTemp);
+
+		listTemp.forEach(data => {
+			//Máximo de 60 itens exibidos no gráfico
+			if (chart.data.labels.length == 10 && chart.data.datasets[0].data.length == 10){
+				chart.data.labels.shift();
+				chart.data.datasets[0].data.shift();
+			}
+
+			chart.data.labels.push(this.time++);
+			chart.data.datasets[0].data.push(parseFloat(data));
+			chart.update();
+		});
+		
+		document.getElementById('average').textContent = obj.average;
+		document.getElementById('averageHour').textContent = obj.averageHour;
+	} 
+	
+	get_data();
+
+	setInterval(() => {
+		get_data();
+	}, 900);
+
+</script>
