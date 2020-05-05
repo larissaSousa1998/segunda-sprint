@@ -59,6 +59,7 @@
             </div>
 
             <div id="grafico-topo">
+							<!-- primeiro grafico -->
 
                 <div id="grafico">
 						<section>
@@ -71,7 +72,7 @@
 					<section>
 				</div>
 
-
+        <!-- segundo grafico -->
                 <div id="grafico2">
 				  <div id='myChart'><a class="" href="https://www.zingchart.com/"></a></div>	
 				</div>
@@ -80,6 +81,50 @@
             <div id="grafico-baixo">
 				<div id="grafico3" style="width:59%;">				
 					<canvas id="c_grafico"></canvas>
+				</div>
+				<div id="grafico4">
+						<canvas id="myChart1" width="100" height="70"></canvas>
+						<script>
+						var ctx = document.getElementById('myChart1').getContext('2d');
+						var myChart1 = new Chart(ctx, {
+								type: 'bar',
+								data: {
+										labels: ['6:00', '6:10', '6:20', '6:30', '6:40', '6:50'],
+										datasets: [{
+												label: 'Intervalos',
+												data: [12, 19, 3, 18, 10, 3],
+												backgroundColor: [
+														'rgba(255, 99, 132, 0.2)',
+														'rgba(255, 99, 132, 0.2)',
+														'rgba(255, 99, 132, 0.2)',
+														'rgba(255, 99, 132, 0.2)',
+														'rgba(255, 99, 132, 0.2)',
+														'rgba(255, 99, 132, 0.2)'
+												],
+												borderColor: [
+														'rgba(255, 99, 132, 0.2)',
+														'rgba(255, 99, 132, 0.2)',
+														'rgba(255, 99, 132, 0.2)',
+														'rgba(255, 99, 132, 0.2)',
+														'rgba(255, 99, 132, 0.2)',
+														'rgba(255, 99, 132, 0.2)'
+												],
+												borderWidth: 1
+										}]
+								},
+								options: {
+										scales: {
+												yAxes: [{
+														ticks: {
+																beginAtZero: true
+														}
+												}]
+										}
+								}
+						});
+						</script>
+				
+					
 				</div>
             </div>
         </div>
@@ -208,6 +253,7 @@ var config = { //configuracao do grafico -não pode traduzir
 										
 										config.data.labels.shift(); // apagar o primeiro
 										config.data.labels.push(novoRegistro.momento); // incluir um novo momento
+
 										config.data.datasets[0].data.shift();  // apagar o primeiro
 										config.data.datasets[0].data.push(novoRegistro.leitura); // incluir uma nova leitura
 
@@ -352,6 +398,8 @@ var config = { //configuracao do grafico -não pode traduzir
 	
 	var configuration = {
 		type: 'line',
+		color:"red",
+		borderColor:"red",
 		data: {
 			datasets: [{
 				label: "Movimento x Time",
