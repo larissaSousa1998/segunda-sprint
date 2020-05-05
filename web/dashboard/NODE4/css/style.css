@@ -136,6 +136,20 @@ cursor: pointer;
 
 }
 
+#grafico4{
+    width: 40%;
+    float: left;
+    height: 300px;
+    background: rgba(226, 226, 226, 0.527);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+
 .media-hora {
     
     margin-left: 100px;
@@ -160,3 +174,5 @@ width: 100%;
 .zc-ref {
 display: none;
 }
+
+

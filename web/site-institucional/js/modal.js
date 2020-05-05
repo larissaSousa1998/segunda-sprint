@@ -72,7 +72,7 @@ function log(e){
     var auxlogin=document.getElementById('emaillogin').value;
     var auxsenha=document.getElementById('senhalogin').value;
     if(email==auxlogin && senha==auxsenha){
-        window.location.href="google.com";
+        window.location.href="./../dashboard/NODE4/index.html";
 
     } else {
         alert("Email ou senha estão incorretos");
@@ -81,7 +81,7 @@ function log(e){
 
 }
 
- btnlogar.addEventListener("click",log);
+btnlogar.addEventListener("click",log);
 btncadastrar.addEventListener("click",cadastrar);
 
 
