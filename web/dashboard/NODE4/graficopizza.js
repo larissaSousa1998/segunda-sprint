@@ -8,24 +8,24 @@ var context = document.getElementById("chart-area").getContext("2d");
 				datasets: [{
 					data: [1, 1, 1, 1],
 					backgroundColor: [
-						window.chartColors = "rgb(255,165,36)",
+						window.chartColors = "rgb(35, 197, 62)",
 						window.chartColors = "#0078d7",
-						window.chartColors = "rgba(197,35,42)",
-						window.chartColors = "rgb(35, 197, 62)"
+						window.chartColors = "rgb(255,165,36)",
+						window.chartColors = "rgba(197,35,42)"
 					],
 				}],
 				labels: [
-					'Muito Baixa',
-					'Normal',
-					'Muito Alta',
-					'ideal'
+					'Novos passageiros',
+					'Movimentação constante',
+					'Movimentação lenta',
+					'Paralisação'
 				]
 			},
 			options: {
 				responsive: true,
 				title: {
 					display: true,
-					text: 'Média de temperaturas ao longo do dia',
+					text: 'Ocorrencias dentro da estação',
 					fontSize: 16,
 				},
 				animation: {
@@ -36,20 +36,24 @@ var context = document.getElementById("chart-area").getContext("2d");
 		};
 
 		function generateRandomData() {
-			let value_1 = parseInt(Math.random() * 5) + 1;
-			let value_2 = parseInt(Math.random() * 5) + 1;
-			let value_3 = parseInt(Math.random() * 5) + 1;
-			let value_4 = parseInt(Math.random() * 5) + 1;
+			let value_1 = parseInt(Math.random() * 7) + 1;
+			let value_2 = parseInt(Math.random() * 7) + 1;
+			let value_3 = parseInt(Math.random() * 7) + 1;
+			let value_4 = parseInt(Math.random() * 7) + 1;
 
 			let values = [value_1, value_2, value_3, value_4];
 
 			config.data.datasets[0].data = values;
+			textodado1.innerHTML=value_1;
+			textodado2.innerHTML=value_2;
+			textodado3.innerHTML=value_3;
+			textodado4.innerHTML=value_4;
 			myDoughnut.update();
 		}
 
 		setInterval(() => {
 			generateRandomData()
-		}, 5000);
+		}, 4000);
 
 		window.onload = function() {
 			var ctx = document.getElementById('chart-area').getContext('2d');
