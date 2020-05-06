@@ -93,6 +93,12 @@ body{
     justify-content: space-between;
 }
 
+#top #esquerda{
+    flex-direction: row;
+
+}
+
+
 #grafico-topo{
     width: 100%;
     height: 26%;

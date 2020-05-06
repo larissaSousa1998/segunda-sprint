@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>Line Chart</title>
+	<title>Flow</title>
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 	<script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script> <!--importando a biblioteca chartJS-->
@@ -54,7 +54,8 @@
                     <p>Dados em tempo real</p>
                 </div>
                 <div id="esquerda">
-                    <p>19:45</p>
+					<b id="horario"></b>
+					<b id="ano" style="margin-top:10px; "></b>
                 </div>
             </div>
 
@@ -63,29 +64,29 @@
 									<div class="container">
 											<div class="text-card">
 													<h4>Novos passageiros</h4>
-													<p id="textodado1"></p>
+													<b><p id="textodado1"></p> </b>
 											</div>
-											<i class="material-icons">description</i> 
+											<i class="material-icons" style="color: blue">person</i> 
 									</div>
 								</div>
 								
 								<div class="card" id="card2">
 									<div class="container">
 											<div class="text-card">
-													<h4>Movimentação constante</h4>
-													<p id="textodado2"></p>
+												<h4>Movimento constante</h4>
+												<b><p id="textodado2"></p> </b>
 											</div>
-											<i class="material-icons">description</i> 
+											<i class="material-icons" style="color: green">mood</i> 
 									</div>
 								</div>
 
 								<div class="card" id="card3">
 									<div class="container">
 											<div class="text-card">
-													<h4>Movimentação lenta</h4>
-													<p id="textodado3"></p>
+													<h4>Movimento lento</h4>
+												<b>	<p id="textodado3"></p> </b>
 											</div>
-											<i class="material-icons">description</i> 
+											<i class="material-icons" style="color: orange">sentiment_neutral</i> 
 										</div>
 								</div>
 
@@ -93,9 +94,9 @@
 										<div class="container">
 												<div class="text-card">
 														<h4>Paralisação</h4>
-														<p id="textodado4"></p>
+													<b>	<p id="textodado4"></p> </b>
 												</div>
-												<i class="material-icons">description</i> 
+												<i class="material-icons" style="color: red">sentiment_very_dissatisfied</i> 
 										</div>
 								</div>
             </div>

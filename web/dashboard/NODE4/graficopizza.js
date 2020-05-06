@@ -44,10 +44,12 @@ var context = document.getElementById("chart-area").getContext("2d");
 			let values = [value_1, value_2, value_3, value_4];
 
 			config.data.datasets[0].data = values;
+			
 			textodado1.innerHTML=value_1;
 			textodado2.innerHTML=value_2;
 			textodado3.innerHTML=value_3;
 			textodado4.innerHTML=value_4;
+
 			myDoughnut.update();
 		}
 
@@ -55,7 +57,36 @@ var context = document.getElementById("chart-area").getContext("2d");
 			generateRandomData()
 		}, 4000);
 
+
+		function chamarhorario(){
+			
+			var agora = new Date();
+			var hora = agora.getHours();
+			var minuto = agora.getMinutes();
+			var segundo = agora.getSeconds();
+			var mes = agora.getMonth();
+			var dia = agora.getDay();
+			var ano = agora.getFullYear();
+			if(dia<9){
+				dia=dia+=0;
+			}
+			var momento = `Horario: ${hora>9?'':'0'}${hora}:${minuto>9?'':'0'}${minuto}:${segundo>9?'':'0'}${segundo}<br>Data: ${dia>9? dia+'0':'0'+dia}/${mes>9?mes+'0':'0'+mes}/${ano} `;
+			var data =  `${dia>9?'':'0'} ${mes} ${ano}`
+			horario.innerHTML=momento;
+			
+		}
+
+			setInterval(() =>{
+				chamarhorario()
+
+			},1000);
+		
+
 		window.onload = function() {
 			var ctx = document.getElementById('chart-area').getContext('2d');
 			window.myDoughnut = new Chart(ctx, config);	
+
 		};
+
+
+		
