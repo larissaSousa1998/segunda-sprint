@@ -61,17 +61,18 @@ var context = document.getElementById("chart-area").getContext("2d");
 		function chamarhorario(){
 			
 			var agora = new Date();
+			var agora2= new Date();
+
 			var hora = agora.getHours();
 			var minuto = agora.getMinutes();
 			var segundo = agora.getSeconds();
-			var mes = agora.getMonth();
-			var dia = agora.getDay();
-			var ano = agora.getFullYear();
-			if(dia<9){
-				dia=dia+=0;
-			}
+
+			var mes = agora2.getUTCMonth()+1;
+			var dia = agora2.getDate();
+			var ano = agora2.getFullYear();
+
+
 			var momento = `Horario: ${hora>9?'':'0'}${hora}:${minuto>9?'':'0'}${minuto}:${segundo>9?'':'0'}${segundo}<br>Data: ${dia>9? dia+'0':'0'+dia}/${mes>9?mes+'0':'0'+mes}/${ano} `;
-			var data =  `${dia>9?'':'0'} ${mes} ${ano}`
 			horario.innerHTML=momento;
 			
 		}
