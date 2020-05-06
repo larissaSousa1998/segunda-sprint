@@ -1,38 +1,41 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: monospace,sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
     overflow: hidden;
-
+    color: rgb(70, 70, 70);
+    background: rgba(226, 226, 226, 0.527);
 }
 
 .menu{
-    width: 20%;
+    width: 18%;
     height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
-    
     float: left;
     top: 0;
     left: 0;
     overflow-x: hidden;
     padding-top: 50px;
     box-shadow: 0px 0px 10px #3030306c;
-    
-
+    background: #4e73df;
+    color: white !important;
 }
 
 .menu .item-menu{
-    width: 70%;
+    width: 90%;
     height:60px;
     margin: 5px;
     display: flex;
     align-items: center;
     border-radius: 5px;
-    
-    
+    transition: 0.3s;
+    padding-left: 10px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
 }
+
 #logo:hover{
     background: transparent;
     cursor:unset;
@@ -40,23 +43,24 @@ body{
 
 
 .menu .item-menu:hover{
-background: grey;
-cursor: pointer;
+    background: #517cfc;
+    cursor: pointer;
 }
 
-#active{
-    background: pink;
-}
+/* #active{
+    background: beige;
+    border-right: 5px solid rgb(45, 45, 189);
+    color: black;
+} */
 
 .menu .item-menu p{
     padding-left: 5px; 
-    font-size: 18px;
+    font-size: 16px;
     margin: 0;
 }
 
 .menu .item-menu i{
     padding-left: 5px;
-
 }
 
 #logo{
@@ -72,12 +76,13 @@ cursor: pointer;
     width: 80%;
     height: 100vh;
     float: left;
+    
 }
 
 .principal #dashboard{
-    width: 90%;
+    width: 92%;
     height: 100%;
-    margin-left: 5%;
+    margin-left: 4%;
 }
 
 #top {
@@ -90,65 +95,125 @@ cursor: pointer;
 
 #grafico-topo{
     width: 100%;
-    height: 40%;
+    height: 26%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.card{
+    width: 24%;
+    height: 80%;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
     
+}
+
+#card1{
+    border-left: 3px solid #0078d7;
+}
+#card2{
+    border-left: 3px solid rgb(35, 197, 62);
+}
+#card3{
+    border-left: 3px solid rgb(255,165,36);
+}
+#card4{
+    border-left: 3px solid rgb(238, 34, 44);
+}
+
+.container{
+    width: 88%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 6%;
+    
+}
+
+.text-card p{
+    margin: 0;
+    margin-top: 8px;
+}
+.card i{
+    color: rgba(0, 0, 0, 0.144);
 }
 
 #grafico-baixo{
     width: 100%;
-    height: 60%;
+    height: 70%;
     display: flex;
     justify-content: space-between;
-
-    
 }
 
-#grafico{
-    float: left;
-    width: 59%;
-    height: 250px;
-    background: rgba(226, 226, 226, 0.527);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-}
-
-#grafico2{
-    float: left;
-    width: 40%;
-    height: 250px;
-    border-radius: 5px;
-    background: rgba(226, 226, 226, 0.527);
-    display: flex;
-
-}
 
 #grafico3{
-    width: 100%;
+    width: 58.5%;
     float: left;
-    height: 300px;
-    background: rgba(226, 226, 226, 0.527);
+    height: 80%;
+    background: rgb(255, 255, 255);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
 }
 
 #grafico4{
     width: 40%;
     float: left;
-    height: 300px;
-    background: rgba(226, 226, 226, 0.527);
+    height: 80%;
+    background: rgb(255, 255, 255);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    justify-content: center;
 }
 
+#teste{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 30%;
+    justify-content: space-between;
+    align-items: center;
+    
+}
 
+h4{
+    margin: 0;
+}
 
+#div-teste{
+    display: flex;
+    flex-direction: row;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#grafico-section{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#corredor{
+    width: 68%;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#div-teste h4{
+    margin-left: 5px;
+}
 
 .media-hora {
     
@@ -173,6 +238,13 @@ width: 100%;
 
 .zc-ref {
 display: none;
+}
+
+#pizza-grafico{
+    width: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

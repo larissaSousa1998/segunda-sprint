@@ -59,427 +59,81 @@
             </div>
 
             <div id="grafico-topo">
-							<!-- primeiro grafico -->
+								<div class="card" id="card1">
+									<div class="container">
+											<div class="text-card">
+													<h4>Titulo</h4>
+													<p>texto</p>
+											</div>
+											<i class="material-icons">description</i> 
+									</div>
+								</div>
+								
+								<div class="card" id="card2">
+									<div class="container">
+											<div class="text-card">
+													<h4>Titulo</h4>
+													<p>texto</p>
+											</div>
+											<i class="material-icons">description</i> 
+									</div>
+								</div>
 
-                <div id="grafico">
-						<section>
-								<h4 class="media">Média: <label id='average'></label></h4>
-								<h4 class="media-hora">Média por hora: <label id='averageHour'></label></h4>
-							</section>
-					
-					<section style="width:100%">
-						<canvas id="chart"></canvas>
-					<section>
-				</div>
+								<div class="card" id="card3">
+									<div class="container">
+											<div class="text-card">
+													<h4>Titulo</h4>
+													<p>texto</p>
+											</div>
+											<i class="material-icons">description</i> 
+										</div>
+								</div>
 
-        <!-- segundo grafico -->
-                <div id="grafico2">
-				  <div id='myChart'><a class="" href="https://www.zingchart.com/"></a></div>	
-				</div>
+								<div class="card" id="card4">
+										<div class="container">
+												<div class="text-card">
+														<h4>Titulo</h4>
+														<p>texto</p>
+												</div>
+												<i class="material-icons">description</i> 
+										</div>
+								</div>
             </div>
             
             <div id="grafico-baixo">
-				<div id="grafico3" style="width:59%;">				
-					<canvas id="c_grafico"></canvas>
-				</div>
-				<div id="grafico4">
-						<canvas id="myChart1" width="100" height="70"></canvas>
-						<script>
-						var ctx = document.getElementById('myChart1').getContext('2d');
-						var myChart1 = new Chart(ctx, {
-								type: 'bar',
-								data: {
-										labels: ['6:00', '6:10', '6:20', '6:30', '6:40', '6:50'],
-										datasets: [{
-												label: 'Intervalos',
-												data: [12, 19, 3, 18, 10, 3],
-												backgroundColor: [
-														'rgba(255, 99, 132, 0.2)',
-														'rgba(255, 99, 132, 0.2)',
-														'rgba(255, 99, 132, 0.2)',
-														'rgba(255, 99, 132, 0.2)',
-														'rgba(255, 99, 132, 0.2)',
-														'rgba(255, 99, 132, 0.2)'
-												],
-												borderColor: [
-														'rgba(255, 99, 132, 0.2)',
-														'rgba(255, 99, 132, 0.2)',
-														'rgba(255, 99, 132, 0.2)',
-														'rgba(255, 99, 132, 0.2)',
-														'rgba(255, 99, 132, 0.2)',
-														'rgba(255, 99, 132, 0.2)'
-												],
-												borderWidth: 1
-										}]
-								},
-								options: {
-										scales: {
-												yAxes: [{
-														ticks: {
-																beginAtZero: true
-														}
-												}]
-										}
-								}
-						});
-						</script>
-				
-					
-				</div>
+							<div id="grafico3">				
+									<section id="teste">
+										<h4 class="media">Média: <label id='average'></label></h4>
+										<h4 class="media-hora">Média por hora: <label id='averageHour'></label></h4>
+										<div id="div-teste">
+												<h4>Local: </h4>
+												<select name="" id="corredor">
+													<option value="">Selecione</option>
+													<option value="">Corredor Leste</option>
+												</select>
+										</div>
+									</section>
+									<section id="grafico-section" style="width:100%">
+										<canvas id="chart"></canvas>
+									<section>
+							</div>
+							<div id="grafico4">
+								<canvas id="chart-area" style="transition: 0.5s;"></canvas>	
+							</div>
             </div>
         </div>
-
-    </section>
+		</section>
+		<script type="text/javascript" src="graficopizza.js"></script>
+		<script type="text/javascript" src="api.js"></script>
 </body>
 
 </html>
 
 <script>
 
-var config = { //configuracao do grafico -não pode traduzir
-									type: 'line',
-									data: {
-										labels: [],
-										datasets: [{
-											label: '',
-											backgroundColor: window.chartColors.green,
-											borderColor: window.chartColors.green,
-											data: [],
-											fill: false, //preenchimento 
-										}]
-									},
-									options: {
-										responsive: true,
-										title: {
-											display: true,
-											text: 'Fluxo de pessoas na estação Consolação'
-										},
-										tooltips: {
-											mode: 'index',
-											intersect: false,
-										},
-										hover: {
-											mode: 'nearest',
-											intersect: true
-										},
-										scales: {
-											xAxes: [{
-												display: true,
-												scaleLabel: {
-													display: true,
-													labelString: 'Horário da Leitura'
-												}
-											}],
-											yAxes: [{
-												display: true,
-												scaleLabel: {
-													display: true,
-													labelString: 'Quantidade de pessoas por alcance'
-												}
-											}]
-										}
-									}
-								};
-
-								// esse "sortearTemperatura()" será desnecessário quando usarmos o backend futuramente
-								function sortearTemperatura() {
-									var limiteMin = 0;
-									var limiteMax = 10;
-									var minimoAbsoluto = Math.abs(limiteMin);
-									return (Math.random() * (minimoAbsoluto+limiteMax) - minimoAbsoluto).toFixed(0);
-								}
-
-								function recuperarDadosIniciais() {
-
-									// esse "registros" será recuperado do backend futuramente
-									var registros = [
-										{
-											momento: '00:03:42',
-											leitura: sortearTemperatura()
-										},
-										{
-											momento: '00:03:52',
-											leitura: sortearTemperatura()
-										},
-										{
-											momento: '00:04:02',
-											leitura: sortearTemperatura()
-										},
-										{
-											momento: '00:04:12',
-											leitura: sortearTemperatura()
-										},
-										{
-											momento: '00:04:22',
-											leitura: sortearTemperatura()
-										},
-										{
-											momento: '00:04:32',
-											leitura: sortearTemperatura()
-										},
-										{
-											momento: '00:04:42',
-											leitura: sortearTemperatura()
-										}
-									];
-
-									var contador = 0;
-
-									while (contador < registros.length) {
-
-										config.data.labels.push(registros[contador].momento);  // incluir um novo momento
-										config.data.datasets[0].data.push(registros[contador].leitura);  // incluir uma nova leitura
-
-										contador++;
-									}
-
-								}
-
-								function receberNovasLeituras() {
-									setTimeout(() => {
-										
-										// esses "agora" etc até "momentos" serão desnecessários quando usarmos o backend futuramente
-										var agora = new Date();
-										var hora = agora.getHours();
-										var minuto = agora.getMinutes();
-										var segundo = agora.getSeconds();
-										var momento = `${hora>9?'':'0'}${hora}:${minuto>9?'':'0'}${minuto}:${segundo>9?'':'0'}${segundo}`;
-
-										// esse "novoRegistro" será recuperado do backend futuramente
-										var novoRegistro = {
-											momento: momento,
-											leitura: sortearTemperatura()
-										};
-										
-										config.data.labels.shift(); // apagar o primeiro
-										config.data.labels.push(novoRegistro.momento); // incluir um novo momento
-
-										config.data.datasets[0].data.shift();  // apagar o primeiro
-										config.data.datasets[0].data.push(novoRegistro.leitura); // incluir uma nova leitura
-
-										window.myLine.update();	
-
-										receberNovasLeituras();	
-
-									}, 3000); // 10000 ms -> 10 segundos
-								}
-
-								function plotarGrafico() {
-									recuperarDadosIniciais();
-
-									var ctx = document.getElementById('c_grafico').getContext('2d');
-									window.myLine = new Chart(ctx, config);
-
-									receberNovasLeituras();
-								}
-
-								window.onload = plotarGrafico; 
-
-	// função randomizando a quantidade de pessoas
-				
-	window.feed = function(callback) {
-					  var tick = {};
-					  tick.plot0 = Math.ceil(0 + (Math.random() * 11)); 
-					  callback(JSON.stringify(tick));
-					};
-				  // configurando o estilo e as condições do gráfico
-				
-					var myConfig = {
-					  type: "gauge", //tipo do gráfico
-					  backgroundColor: "rgba(226, 226, 226, 0.527)",
-					  borderRadius: 5,
-					  globals: {
-						fontSize: 25 //tamanho da fonte
-					  },
-					  plotarea: {
-						marginTop: 50 //margem do topo
-					  },
-					  plot: {
-						size: '100%', //tamanho do texto
-						valueBox: {
-						  placement: 'center', //alinhamento do texto
-						  text: '%v', //valor que o texto vai assumir de acordo com as condições
-						  fontSize: 35,
-						  rules: [
-							{
-							  rule: '%v >= 9',
-							  text: '%v<br>Crítico'
-							},
-							{
-							  rule: '%v <9 && %v >= 6',
-							  text: '%v<br>Atenção'
-							},
-							{
-							  rule: '%v < 6 && %v >= 3',
-							  text: '%v<br>Normal'
-							},
-							{
-							  rule: '%v <  3',
-							  text: '%v<br>Fraco'
-							}
-						  ]
-						}
-					  },
-					  tooltip: {
-						borderRadius: 5 //borda do gráfico
-					  },
-					  scaleR: {
-						aperture: 180, //aberura de 180º do gráfico
-						minValue: 0, //valor mínimo que ele assume
-						maxValue: 10, //valor máximo que ele assume
-						step: 3, //em quantos passos ele divide a sequencia de cores
-						center: { 
-						  visible: false
-						},
-						tick: {
-						  visible: false
-						},
-						item: {
-						  offsetR: 0,
-						  rules: [{
-							rule: '%i == 9',
-							offsetX: 15
-						  }]
-						},
-						labels: ['0', '3', '6', '9', '', '', '', '', '', '', '', '',''], //labels que mostra o número máximo em cada divisão
-						ring: {
-						  size: 50, //tamanho das barras
-						  rules: [{ //regras para as barras assumirem cores diferentes
-							  rule: '%v < 3',
-							  backgroundColor: 'blue'
-							},
-							{
-							  rule: '%v >= 3 && %v < 6',
-							  backgroundColor: 'green'
-							},
-							{
-							  rule: '%v >= 6 && %v < 9',
-							  backgroundColor: 'yellow'
-							},
-							{
-							  rule: '%v >= 9',
-							  backgroundColor: 'red'
-							},
-				
-						  ]
-						}
-					  },
-					  refresh: { //atualização do gráfico
-						type: "feed",
-						transport: "js",
-						url: "feed()",
-						interval: 2000, 
-						resetTimeout: 1000
-					  },
-					  series: [{
-						values: [0], // valor que o gráfico inicia
-						backgroundColor: 'black',
-						indicator: [10, 10, 10, 10, 0.75],
-						animation: {
-						  effect: 2,
-						  method: 1,
-						  sequence: 4,
-						  speed: 900 
-						},
-					  }]
-					};
-				
-					zingchart.render({ //rendenização do fráfico
-					  id: 'myChart',
-					  data: myConfig,
-					  height: '100%', //altura
-					  width: '100%', //largura
-					});
 
 
-	var context = document.getElementById("chart").getContext("2d");
-	context.canvas.width = 1000;
-	context.canvas.height = 300;
 	
-	var configuration = {
-		type: 'line',
-		color:"red",
-		borderColor:"red",
-		data: {
-			datasets: [{
-				label: "Movimento x Time",
-				type: 'line',
-			}]
-		},
-		options: {
-			scales: {
-				xAxes: [{
-					//type: 'value',
-					distribution: 'series',
-					ticks: {
-						beginAtZero:true
-					}
-				}],
-				yAxes: [{
-					scaleLabel: {
-						display: true,
-						labelString: 'Fluxo de pessoas'
-					},
-					ticks: {
-						beginAtZero:true
-					}
-				}]
-			},
-			animation: {
-				duration: 0
-			}
-		}
-	};
-	
-	var chart = new Chart(context, configuration);
-
-	//Função para obter os dados de temperatura do server
-	//Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
-	
-	//Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
-	//hora de montar/atualizar o gráfico
-	this.lastIndexTemp = 0;
-	this.time = 0;
-
-	function get_data(){
-
-		var http = new XMLHttpRequest();
-		http.open('GET', 'http://localhost:3000/api', false);
-		http.send(null);        
-		
-		var obj = JSON.parse(http.responseText);
-		console.log(obj)
-		if (obj.data.length == 0){
-			return;
-		}
-
-		var _lastIndexTemp = this.lastIndexTemp;
-		this.lastIndexTemp = obj.data.length;
-		listTemp = obj.data.slice(_lastIndexTemp);
-
-		listTemp.forEach(data => {
-			//Máximo de 60 itens exibidos no gráfico
-			if (chart.data.labels.length == 10 && chart.data.datasets[0].data.length == 10){
-				chart.data.labels.shift();
-				chart.data.datasets[0].data.shift();
-			}
-
-			chart.data.labels.push(this.time++);
-			chart.data.datasets[0].data.push(parseFloat(data));
-			chart.update();
-		});
-		
-		document.getElementById('average').textContent = obj.average;
-		document.getElementById('averageHour').textContent = obj.averageHour;
-	} 
-	
-	get_data();
-
-	setInterval(() => {
-		get_data();
-	}, 900);
-
-
 	
 	
 
