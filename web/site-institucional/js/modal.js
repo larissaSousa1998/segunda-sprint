@@ -81,6 +81,8 @@ function log(e){
 
 }
 
+
+
 btnlogar.addEventListener("click",log);
 btncadastrar.addEventListener("click",cadastrar);
 

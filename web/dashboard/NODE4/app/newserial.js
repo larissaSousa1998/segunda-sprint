@@ -18,7 +18,7 @@ class NewArduino {
     
     SetConnection(){
         setInterval(() => {
-            let data_float = sensors.lm35(0.001,1);
+            let data_float = sensors.trc5000();
 
             if (this.__listDataTemp.length === 59) {
                 let sum = this.__listDataTemp.reduce((a, b) =>  a + b, 0);
