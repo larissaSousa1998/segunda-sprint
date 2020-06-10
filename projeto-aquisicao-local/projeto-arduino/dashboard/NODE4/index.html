@@ -1,0 +1,145 @@
+
+<!doctype html>
+<html>
+
+<head>
+	<title>Flow</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script> <!--importando a biblioteca chartJS-->
+	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+	<script src="https://cdn.zingchart.com/zingchart.min.js"></script> <!--importando a biblioteca zingchart-->
+	
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+	
+	
+
+	 <nav class="menu">
+        <div class="item-menu" id="logo">
+            <h1>Flow</h1>
+        </div>
+
+        <div class="item-menu" id="active">
+                <i class="material-icons">dashboard</i> 
+                <p>Dashboard</p>
+        </div>
+
+
+        <div class="item-menu">
+                <i class="material-icons">person</i> 
+                <p>Perfil</p>
+        </div>
+
+        <div class="item-menu">
+                <i class="material-icons">description</i> 
+                <p>Relatórios</p>
+        </div>
+
+        <div class="item-menu">
+                <i class="material-icons">settings</i> 
+                <p>Configurações</p>
+        </div>
+    </nav>
+    
+
+    <section class="principal">
+        <div id="dashboard">
+            <div id="top">
+                <div id="esquerda">
+                    <h1>Estação Paulista</h1>
+                    <p>Dados em tempo real</p>
+                </div>
+                <div id="esquerda">
+					<b id="horario"></b>
+					<b id="ano" style="margin-top:10px; "></b>
+                </div>
+            </div>
+
+            <div id="grafico-topo">
+								<div class="card" id="card1">
+									<div class="container">
+											<div class="text-card">
+													<h4>Novos passageiros</h4>
+													<b><p id="textodado1"></p> </b>
+											</div>
+											<i class="material-icons" style="color: blue">person</i> 
+									</div>
+								</div>
+								
+								<div class="card" id="card2">
+									<div class="container">
+											<div class="text-card">
+												<h4>Movimento constante</h4>
+												<b><p id="textodado2"></p> </b>
+											</div>
+											<i class="material-icons" style="color: green">mood</i> 
+									</div>
+								</div>
+
+								<div class="card" id="card3">
+									<div class="container">
+											<div class="text-card">
+													<h4>Movimento lento</h4>
+												<b>	<p id="textodado3"></p> </b>
+											</div>
+											<i class="material-icons" style="color: orange">sentiment_neutral</i> 
+										</div>
+								</div>
+
+								<div class="card" id="card4">
+										<div class="container">
+												<div class="text-card">
+														<h4>Paralisação</h4>
+													<b>	<p id="textodado4"></p> </b>
+												</div>
+												<i class="material-icons" style="color: red">sentiment_very_dissatisfied</i> 
+										</div>
+								</div>
+            </div>
+            
+            <div id="grafico-baixo">
+							<div id="grafico3">				
+									<section id="teste">
+										<h4 class="media">Média: <label id='average'></label></h4>
+										<h4 class="media-hora">Média por hora: <label id='averageHour'></label></h4>
+										<div id="div-teste">
+												<h4>Local: </h4>
+												<select name="" id="corredor">
+													<option value="">Selecione</option>
+													<option value="">Corredor Leste</option>
+													<option value="">Corredor Sul</option>
+													<option value="">Escada 1</option>
+												</select>
+												
+										</div>
+									</section>
+
+									<section id="grafico-section" style="width:100%">
+										<canvas id="chart"></canvas>
+									<section>
+							</div>
+							<div id="grafico4">
+								<canvas id="chart-area" style="transition: 0.5s;"></canvas>	
+							</div>
+            </div>
+        </div>
+		</section>
+		<script type="text/javascript" src="graficopizza.js"></script>
+		<script type="text/javascript" src="api.js"></script>
+</body>
+
+</html>
+
+<script>
+
+
+
+	
+	
+	
+
+</script>
