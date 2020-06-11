@@ -90,10 +90,10 @@ function registrar_leitura(presenca) {
 
         return banco.sql.query(`
         INSERT into tbDadoSensor (valorSensor, dataEntradaDado, fkSensor)
-        values (${presenca}, CONVERT(Datetime, '${agora()}', 1));
+        values (${presenca}, CONVERT(Datetime, '${agora()}'), 1);
         
-        delete from tbDadoSensor where id not in 
-        (select top ${registros_mantidos_tabela_leitura} codSensor from tbDadoSensor order by id desc);`)
+        delete from tbDadoSensor where codSensor not in 
+        (select top ${registros_mantidos_tabela_leitura} codSensor from tbDadoSensor order by codSensor desc);`)
         .then(() => {
             console.log('Registro inserido com sucesso!');
         });
@@ -121,7 +121,7 @@ if (gerar_dados_aleatorios) {
 	// dados aleatórios
 	setInterval(function() {
 		console.log('Gerando valores aleatórios!');
-		registrar_leitura(Math.random(1)<0.5?true:false)
+		registrar_leitura(Math.random(1)<0.5?0:1)
 	}, intervalo_geracao_aleatoria_segundos * 1000);
 } else {
 	// iniciando a "escuta" de dispositivos Arduino.
