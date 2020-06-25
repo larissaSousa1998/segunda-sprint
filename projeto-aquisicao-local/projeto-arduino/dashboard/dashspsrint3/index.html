@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>FLOW</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+	<!--importando a biblioteca chartJS-->
+	<script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+	<script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+	<!--importando a biblioteca zingchart-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+	<link rel="stylesheet" href="./css/style.css">
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<nav class="menu">
+		<div class="item-menu" id="logo">
+			<h1>Flow</h1>
+		</div>
+
+		<div class="item-menu" id="active">
+			<i class="material-icons">dashboard</i>
+			<p>Dashboard</p>
+		</div>
+
+
+		<div class="item-menu">
+			<i class="material-icons">description</i>
+			<p>Relatórios</p>
+		</div>
+
+
+		<div class="item-menu">
+			
+			<i class="material-icons">map</i>
+			<a href="mapa.html">Mapa de calor</a>
+		
+		</div>
+			
+	</nav>
+
+
+	<section class="principal">
+		<div id="dashboard">
+			<div id="top">
+				<div id="esquerda">
+					<h1>Estação Paulista</h1>
+					<p>Dados em tempo real</p>
+				</div>
+				<div id="esquerda">
+					<b id="horario"></b>
+					<b id="ano" style="margin-top:10px; "></b>
+				</div>
+			</div>
+
+			<div id="grafico-topo">
+				<div class="card" id="card1">
+					<div class="container">
+						<div class="text-card">
+							<h4>Novos passageiros</h4>
+							<b>
+								<p id="textodado1"></p>
+							</b>
+						</div>
+						<i class="material-icons" style="color: blue">person</i>
+					</div>
+				</div>
+
+				<div class="card" id="card2">
+					<div class="container">
+						<div class="text-card">
+							<h4>Movimento constante</h4>
+							<b>
+								<p id="textodado2"></p>
+							</b>
+						</div>
+						<i class="material-icons" style="color: green">mood</i>
+					</div>
+				</div>
+
+				<div class="card" id="card3">
+					<div class="container">
+						<div class="text-card">
+							<h4>Movimento lento</h4>
+							<b>
+								<p id="textodado3"></p>
+							</b>
+						</div>
+						<i class="material-icons" style="color: orange">sentiment_neutral</i>
+					</div>
+				</div>
+
+				<div class="card" id="card4">
+					<div class="container">
+						<div class="text-card">
+							<h4>Paralisação</h4>
+							<b>
+								<p id="textodado4"></p>
+							</b>
+						</div>
+						<i class="material-icons" style="color: red">sentiment_very_dissatisfied</i>
+					</div>
+				</div>
+			</div>
+			<div id="grafico-baixo">
+				<div id="grafico3">
+					<section id="teste">
+						<h4 class="media">Média: <label id='average'></label></h4>
+						<h4 class="media-hora">Média por hora: <label id='averageHour'></label></h4>
+						<div id="div-teste">
+							<h4>Local: </h4>
+							<select name="" id="corredor">
+								<option value="">Selecione</option>
+								<option value="">Corredor Leste</option>
+								<option value="">Corredor Sul</option>
+								<option value="">Escada 1</option>
+							</select>
+
+						</div>
+					</section>
+					<section id="grafico-section" style="width:100%">
+						<canvas id="chart-switch"></canvas>
+					</section>
+
+				</div>
+
+				<div id="grafico4">
+					<canvas id="chart-area" style="transition: 0.5s;"></canvas>
+				</div>
+			</div>
+		</div>
+
+	
+
+
+<script type="text/javascript" src="graficopizza.js"></script>
+		
+		<script>
+			//Função para obter os dados de temperatura do server
+
+			//Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
+			//hora de montar/atualizar o gráfico
+
+			this.time = 0;
+
+			function get_data() {
+
+				var http = new XMLHttpRequest();
+				http.open('GET', 'http://localhost:3000/api', false);
+				http.send(null);
+				
+				var obj = JSON.parse(http.responseText);
+
+
+				
+
+				if (obj.data.length == 0) {
+					return;
+				}
+
+				var _lastIndexTemp = this.lastIndexTemp;
+				this.lastIndexTemp = obj.data.length;
+				listTemp = obj.data.slice(_lastIndexTemp);
+
+
+
+
+
+			}
+
+
+
+
+
+
+
+				//Second Graphic
+
+
+
+
+
+
+			//Função para obter os dados de temperatura do server
+
+
+			//Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
+			//hora de montar/atualizar o gráfico
+
+
+
+
+			//Thirty Graphic
+
+			var context3 = document.getElementById("chart-switch").getContext("2d");
+			context3.canvas.width = 1000;
+			context3.canvas.height = 300;
+
+			var switch_sensor = {
+				type: 'line',
+				data: {
+					datasets: [{
+						label: "Switch x Time",
+						type: 'line',
+						borderColor: ['#ae3f3f'],
+						backgroundColor: ['#c97f7f']
+					}]
+				},
+				options: {
+					scales: {
+						xAxes: [{
+							//type: 'value',
+							distribution: 'series',
+							ticks: {
+								beginAtZero: true
+							}
+						}],
+						yAxes: [{
+							scaleLabel: {
+								display: true,
+								labelString: 'Switch'
+							},
+							ticks: {
+								beginAtZero: true
+							}
+						}]
+					},
+					animation: {
+						duration: 0
+					}
+				}
+			};
+
+			var chartSwitch = new Chart(context3, switch_sensor);
+
+			//Função para obter os dados de temperatura do server
+
+			//Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
+			//hora de montar/atualizar o gráfico
+			this.lastIndexTempHumidity = 0;
+			this.timeSwitch = 0;
+
+			function testando (){
+				let http =  new XMLHttpRequest();
+				http.open('GET', 'http://localhost:3000/api/mapaDash',false);
+				http.send(null);
+				var alo = JSON.parse(http.responseText);
+				console.log(alo);
+			}
+
+			function get_switch() {
+
+				var http = new XMLHttpRequest();
+				http.open('GET', 'http://localhost:3000/api/switch', false);
+				http.send(null);
+
+				var obj = JSON.parse(http.responseText);
+				// console.log(obj);
+				if (obj.data.length == 0) {
+					return;
+				}
+
+				var _lastIndexTemp = this.lastIndexTempSwitch;
+				this.lastIndexTempSwitch = obj.data.length;
+				listTemp = obj.data.slice(_lastIndexTemp);
+
+				listTemp.forEach(data => {
+					//Máximo de 60 itens exibidos no gráfico
+					if (chartSwitch.data.labels.length == 10 && chartSwitch.data.datasets[0].data.length == 10) {
+						chartSwitch.data.labels.shift();
+						chartSwitch.data.datasets[0].data.shift();
+					}
+
+					chartSwitch.data.labels.push(this.time++);
+					chartSwitch.data.datasets[0].data.push(parseFloat(data));
+					chartSwitch.update();
+				});
+
+			}
+
+			get_switch();
+			testando();
+
+
+
+			function sendTemperature() {
+				var http = new XMLHttpRequest();
+				http.open('POST', 'http://localhost:3000/api/sendData');
+
+				http.send();
+			}
+
+			sendTemperature();
+
+
+		
+
+			
+
+			setInterval(() => {
+			
+				get_data();
+
+				get_switch();
+
+				sendTemperature();
+			}, 3000);
+
+
+		</script>
+</body>
+
+</html>
