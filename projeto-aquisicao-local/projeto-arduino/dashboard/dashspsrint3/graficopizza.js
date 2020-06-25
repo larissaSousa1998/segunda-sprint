@@ -72,7 +72,7 @@ function chamarhorario() {
 	var ano = agora2.getFullYear();
 
 
-	var momento = `Horario: ${hora>9?'':'0'}${hora}:${minuto>9?'':'0'}${minuto}:${segundo>9?'':'0'}${segundo}<br>Data: ${dia>9? dia+'0':'0'+dia}/${mes>9?mes+'0':'0'+mes}/${ano} `;
+	var momento = `Horario: ${hora>9?'':'0'}${hora}:${minuto>9?'':'0'}${minuto}:${segundo>9?'':'0'}${segundo}<br>Data: ${dia<9? dia+'0':dia}/${mes>9?mes+'0':'0'+mes}/${ano} `;
 	horario.innerHTML=momento;
 	// 
 
