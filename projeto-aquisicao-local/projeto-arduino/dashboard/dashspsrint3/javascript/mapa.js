@@ -1,80 +1,16 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-    <meta charset="utf-8">
-    <title>SvgAreaHeatmap Plugin Example</title>
-    <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial;
-        }
-    </style>
-</head>
 
-<body>
-    <nav class="menu" style="display: block">
-        <div class="item-menu" id="logo">
-            <h1>Flow</h1>
-        </div>
-
-        <div class="item-menu" id="active">
-            <i class="material-icons">dashboard</i>
-            <p>Dashboard</p>
-        </div>
-
-        <div class="item-menu">
-            <i class="material-icons">person</i>
-            <p>Perfil</p>
-        </div>
-
-        <div class="item-menu">
-            <i class="material-icons">description</i>
-            <p>Relatórios</p>
-        </div>
-
-        <div class="item-menu">
-            <i class="material-icons">settings</i>
-            <p>Configurações</p>
-        </div>
-
-        <div class="item-menu">
-
-            <i class="material-icons">map</i>
-            <a href="mapa.html">Mapa de calor</a>
-
-        </div>
-
-    </nav>
-
-    <section class="principal">
-
-        <div id="heatmapContainerWrapper">
-
-            <div id="heatmapContainer">
-            </div>
-        </div>
-
-    </section>
-
-</body>
-<script src="node_modules/heatmap.js/build/heatmap.js"></script>
-<script>
+    
     let interval;
     var heatmapInstance = h337.create({
-        container: document.querySelector("#heatmapContainer"),
+        container: document.querySelector("#modalMapa"),
     });
 
     setInterval(() => {
         console.log('resetou');
         clearInterval(interval);
         map();
-    }, 20000);
+    }, 15000);
     
     map();
 
@@ -148,6 +84,3 @@
     }
 
 
-</script>
-
-</html> -->

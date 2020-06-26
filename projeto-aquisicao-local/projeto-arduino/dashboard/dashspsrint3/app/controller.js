@@ -102,13 +102,14 @@ router.post('/sendData', (request, response) => {
 
 
 
-    const registros_mantidos_tabela_sensor = 100;
+    const registros_mantidos_tabela_sensor = 60;
 
 
 
 
 
-    let fk = parseInt(Math.random() * 5 + 1);
+
+    let fk = parseInt(Math.random() * 12 + 1);
 
     let script1 = `
     INSERT into tbDadoSensor (valorSensor, dataEntradaDado, fkSensor)
@@ -180,13 +181,20 @@ router.get("/mapData", (request, response) => {
 
 )
 
-router.get("/mapaDash", (request, response) => {
-    let teste =2;
-    let retorno = `SELECT * FROM tbDadoSensor WHERE fkSensor =${teste} `
+router.get("/mapaDash/:id", (request, response) => {
+    let teste =request.params.id;
+
+    let retorno = `SELECT * FROM tbDadoSensor WHERE fkSensor =${teste}`
     db.conectar().then(async ()=>{
         return await db.sql.query(retorno)
         .then((res)=>{
-            response.send(res);
+            
+            let ultimoregistro = res.recordset[res.recordset.length-1];
+            response.json({
+                valorSensor: ultimoregistro.valorSensor,
+                dataEntradaDado:ultimoregistro.dataEntradaDado,
+            })
+
            
 
         }).catch(error=>{
@@ -197,11 +205,7 @@ router.get("/mapaDash", (request, response) => {
         console.log(`erro ao tentar selecionar aquisicao na base : ${erro}`);
 
     }).finally(()=>{
-        try{
-
-        }catch(e){
-
-        }
+        db.sql.close();
     });
 })  
 

@@ -18,6 +18,18 @@
 </head>
 
 <body>
+
+		<div id="caixaMapa">
+				<div id="modalMapa">
+					<div id="fechamapa" onclick="fechamapa()">X</div>
+					<div id="heatmapContainerWrapper">
+	
+						<div id="heatmapContainer">
+						</div>
+					</div>
+	
+				</div>
+			</div>
 	<nav class="menu">
 		<div class="item-menu" id="logo">
 			<h1>Flow</h1>
@@ -36,16 +48,19 @@
 
 
 		<div class="item-menu">
-			
+
 			<i class="material-icons">map</i>
 			<a href="mapa.html">Mapa de calor</a>
-		
+
 		</div>
-			
+
 	</nav>
+	
 
 
 	<section class="principal">
+		<span id="Mapa" onclick="abremapa()"><i class="material-icons"  >map</i></span>
+		
 		<div id="dashboard">
 			<div id="top">
 				<div id="esquerda">
@@ -59,51 +74,104 @@
 			</div>
 
 			<div id="grafico-topo">
+
+				<div id="caixasetor1">
+					<div id="modalsetor1">
+						<button id="fechasetor1" onclick="fechamodal1()">X</button>
+						<div class="descricaomodal"></div>
+						<div class="graficomodal">
+							<canvas id="graficoleste"></canvas>
+						</div>
+					</div>
+				</div>
 				<div class="card" id="card1">
 					<div class="container">
 						<div class="text-card">
-							<h4>Novos passageiros</h4>
+							<h4>Ala Leste</h4>
 							<b>
-								<p id="textodado1"></p>
+								<span>Nivel de movimentação <p id="textodado1"></p> </span>
+
 							</b>
+							<button class="botoescards" onclick="abremodal1()">Ver mais informações</button>
 						</div>
-						<i class="material-icons" style="color: blue">person</i>
+						<i class="material-icons" style="color: blue">analytics</i>
 					</div>
 				</div>
 
+				<div id="caixasetor2">
+					<div id="modalsetor2">
+						<button id="fechasetor2" onclick="fechamodal2()">X</button>
+
+						<div class="descricaomodal">
+
+						</div>
+						<div class="graficomodal">
+							<canvas id="graficonorte"></canvas>
+
+						</div>
+					</div>
+				</div>
 				<div class="card" id="card2">
 					<div class="container">
 						<div class="text-card">
-							<h4>Movimento constante</h4>
+							<h4>Ala Norte</h4>
 							<b>
-								<p id="textodado2"></p>
+								<span>Nivel de movimentação <p id="textodado2"></p> </span>
+
 							</b>
+							<button class="botoescards" onclick="abremodal2()">Ver mais informações</button>
 						</div>
-						<i class="material-icons" style="color: green">mood</i>
+						<i class="material-icons" style="color: green">analytics</i>
 					</div>
 				</div>
 
+				<div id="caixasetor3">
+					<div id="modalsetor3">
+						<button id="fechasetor3" onclick="fechamodal3()">X</button>
+
+						<div class="descricaomodal"></div>
+						<div class="graficomodal">
+							<canvas id="graficooeste"></canvas>
+						</div>
+					</div>
+				</div>
 				<div class="card" id="card3">
 					<div class="container">
 						<div class="text-card">
-							<h4>Movimento lento</h4>
+							<h4>Ala Oeste</h4>
 							<b>
-								<p id="textodado3"></p>
+								<span>Nivel de movimentação <p id="textodado3"></p> </span>
+
 							</b>
+							<button class="botoescards" onclick="abremodal3()">Ver mais informações</button>
 						</div>
-						<i class="material-icons" style="color: orange">sentiment_neutral</i>
+						<i class="material-icons" style="color: orange">analytics</i>
+					</div>
+				</div>
+
+
+				<div id="caixasetor4">
+					<div id="modalsetor4">
+						<button id="fechasetor4" onclick="fechamodal4()">X</button>
+
+						<div class="descricaomodal"></div>
+						<div class="graficomodal">
+							<canvas id="graficosul"></canvas>
+						</div>
 					</div>
 				</div>
 
 				<div class="card" id="card4">
 					<div class="container">
 						<div class="text-card">
-							<h4>Paralisação</h4>
+							<h4>Ala sul</h4>
 							<b>
-								<p id="textodado4"></p>
+								<span>Nivel de movimentação <p id="textodado4"></p> </span>
+
 							</b>
+							<button class="botoescards" onclick="abremodal4()">Ver mais informações</button>
 						</div>
-						<i class="material-icons" style="color: red">sentiment_very_dissatisfied</i>
+						<i class="material-icons" style="color: red">analytics</i>
 					</div>
 				</div>
 			</div>
@@ -135,11 +203,19 @@
 			</div>
 		</div>
 
-	
 
 
-<script type="text/javascript" src="graficopizza.js"></script>
-		
+
+		<script type="text/javascript" src="graficopizza.js"></script>
+		<script src="node_modules/heatmap.js/build/heatmap.js"></script>
+		<script src="./javascript/setorleste.js"></script>
+		<script src="./javascript/setornorte.js"></script>
+		<script src="./javascript/setoroeste.js"></script>
+		<script src="./javascript/setorsul.js"></script>
+		<script src="./javascript/plotagrafico.js"></script>
+		<script src="./javascript/mapa.js"></script>
+		<script src="./javascript/acoesdash.js"></script>
+
 		<script>
 			//Função para obter os dados de temperatura do server
 
@@ -153,11 +229,11 @@
 				var http = new XMLHttpRequest();
 				http.open('GET', 'http://localhost:3000/api', false);
 				http.send(null);
-				
+
 				var obj = JSON.parse(http.responseText);
 
 
-				
+
 
 				if (obj.data.length == 0) {
 					return;
@@ -179,7 +255,7 @@
 
 
 
-				//Second Graphic
+			//Second Graphic
 
 
 
@@ -245,13 +321,7 @@
 			this.lastIndexTempHumidity = 0;
 			this.timeSwitch = 0;
 
-			function testando (){
-				let http =  new XMLHttpRequest();
-				http.open('GET', 'http://localhost:3000/api/mapaDash',false);
-				http.send(null);
-				var alo = JSON.parse(http.responseText);
-				console.log(alo);
-			}
+
 
 			function get_switch() {
 
@@ -284,7 +354,7 @@
 			}
 
 			get_switch();
-			testando();
+
 
 
 
@@ -293,23 +363,25 @@
 				http.open('POST', 'http://localhost:3000/api/sendData');
 
 				http.send();
+				testando(contador);
 			}
 
 			sendTemperature();
 
 
-		
 
-			
+
+
 
 			setInterval(() => {
-			
+
 				get_data();
 
 				get_switch();
 
 				sendTemperature();
-			}, 3000);
+
+			}, 1000);
 
 
 		</script>

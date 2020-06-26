@@ -36,19 +36,19 @@ var config = {
 };
 
 function generateRandomData() {
-	let value_1 = parseInt(Math.random() * 7) + 1;
-	let value_2 = parseInt(Math.random() * 7) + 1;
-	let value_3 = parseInt(Math.random() * 7) + 1;
-	let value_4 = parseInt(Math.random() * 7) + 1;
+	let value_1 = parseInt(Math.random() * 70) + 1;
+	let value_2 = parseInt(Math.random() * 70) + 1;
+	let value_3 = parseInt(Math.random() * 70) + 1;
+	let value_4 = parseInt(Math.random() * 70) + 1;
 
 	let values = [value_1, value_2, value_3, value_4];
 
 	config.data.datasets[0].data = values;
 
-	textodado1.innerHTML = value_1;
-	textodado2.innerHTML = value_2;
-	textodado3.innerHTML = value_3;
-	textodado4.innerHTML = value_4;
+	textodado1.innerHTML = `${value_1}%`;
+	textodado2.innerHTML = `${value_2}%`;
+	textodado3.innerHTML = `${value_3}%`;
+	textodado4.innerHTML = `${value_4}%`;
 
 	myDoughnut.update();
 }
