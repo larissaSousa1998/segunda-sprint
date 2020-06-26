@@ -8,7 +8,7 @@ body{
 }
 
 .menu{
-    width: 18%;
+    width: 15%;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -21,8 +21,18 @@ body{
     box-shadow: 0px 0px 10px #3030306c;
     background: #4e73df;
     color: white !important;
+    transition: 1s;
 }
 
+.letra {
+    animation-name: desaparecer;
+}
+@keyframes desaparecer{
+    0%{opacity: 1;};
+    50%{opacity: 0.5;};
+    100%{opacity: 0;}
+}
+    /**/
 .menu .item-menu{
     width: 90%;
     height:60px;
@@ -144,6 +154,23 @@ body{
 }
 #card4{
     border-left: 3px solid rgb(238, 34, 44);
+}
+
+/*BOTÕES PARA FECHAR E ABRIR MENU LATERAL*/
+/*aqui*/
+.btn_menu{
+    background-color: rgba(255,255,255,0.07);
+    width: 22px;
+    height: 31px;
+    padding-left: 19px;
+    padding-top: 16px;
+    margin-top: 45%;
+    border-radius: 26px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.nav-seta{
+    transition: all 0.4s ease-in-out;
 }
 
 .container{

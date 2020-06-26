@@ -2,7 +2,9 @@
 <html>
 
 <head>
-	<title>FLOW</title>
+	<title>Flow</title>
+	<link rel="icon" href="imagem/logo.png" type="imagem/icon">
+	<script src="https://kit.fontawesome.com/508f88ea40.js" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 	<script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
 	<!--importando a biblioteca chartJS-->
@@ -16,47 +18,39 @@
 
 	</style>
 </head>
-
+<!-- ****************************NAV********************************** -->
 <body>
-
-		<div id="caixaMapa">
-				<div id="modalMapa">
-					<div id="fechamapa" onclick="fechamapa()">X</div>
-					<div id="heatmapContainerWrapper">
-	
-						<div id="heatmapContainer">
-						</div>
-					</div>
-	
-				</div>
-			</div>
-	<nav class="menu">
+	<nav id="menu" class="menu">
 		<div class="item-menu" id="logo">
-			<h1>Flow</h1>
+			<h1 >Flow</h1>
 		</div>
 
-		<div class="item-menu" id="active">
-			<i class="material-icons">dashboard</i>
-			<p>Dashboard</p>
-		</div>
-
-
-		<div class="item-menu">
-			<i class="material-icons">description</i>
-			<p>Relatórios</p>
+		<div id="div_icon1" class="item-menu" id="active">
+			<i class="material-icons icon_nav">dashboard</i>
+			<p class="letra" id="frase_dash_nav">Dashboard</p>
 		</div>
 
 
-		<div class="item-menu">
-
-			<i class="material-icons">map</i>
-			<a href="mapa.html">Mapa de calor</a>
-
+		<div id="div_icon2" class="item-menu">
+			<i class="material-icons icon_nav">description</i>
+			<p class="letra" id="frase_rel_nav">Relatórios</p>
 		</div>
 
+
+		<div id="div_icon3" class="item-menu">
+			<i class="material-icons">drafts</i>
+			<p class="letra" id="frase_contato_nav">Contato</p>
+		</div>
+		<!-- BOTÕES PARA ABRIR E FECHAR MENU LATERAL -->
+		<div class="nav-seta">
+			<i id="setaE" onclick="close_nav()" class="fas fa-chevron-left btn_menu"></i>
+			<i id="setaD" onclick="open_nav()" style="display: none;" class="fas fa-chevron-right btn_menu"></i>
+		
+		</div>
+			
 	</nav>
-	
 
+	<!-- **************************************************************** -->
 
 	<section class="principal">
 		<span id="Mapa" onclick="abremapa()"><i class="material-icons"  >map</i></span>
@@ -217,6 +211,32 @@
 		<script src="./javascript/acoesdash.js"></script>
 
 		<script>
+			//Função para FECHAR nav-menu
+			
+			function close_nav(){
+				menu.style.width = '8%';
+				setaE.style.display = 'none';
+				setaD.style.display = 'block';
+				frase_rel_nav.style.display = 'none';
+				frase_dash_nav.style.display = 'none';
+				frase_contato_nav.style.display = 'none';
+				div_icon1.style.marginLeft = '47%';
+				div_icon2.style.marginLeft = '47%';
+				div_icon3.style.marginLeft = '47%';
+				logo.style.paddingLeft = '0'
+			}
+			//Função para ABRIR nav-menu
+			function open_nav(){
+				menu.style.width = '15%';
+				setaD.style.display = 'none';
+				setaE.style.display = 'block';
+				frase_rel_nav.style.display = 'block';
+				frase_dash_nav.style.display = 'block';
+				frase_contato_nav.style.display = 'block';
+				div_icon1.style.marginLeft = '0';
+				div_icon2.style.marginLeft = '0';
+				div_icon3.style.marginLeft = '0';
+			}
 			//Função para obter os dados de temperatura do server
 
 			//Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
