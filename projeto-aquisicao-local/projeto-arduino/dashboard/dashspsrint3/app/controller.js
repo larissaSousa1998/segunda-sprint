@@ -102,7 +102,7 @@ router.post('/sendData', (request, response) => {
 
 
 
-    const registros_mantidos_tabela_sensor = 60;
+    const registros_mantidos_tabela_sensor = 1000;
 
 
 
@@ -149,8 +149,54 @@ router.post('/sendData', (request, response) => {
     response.sendStatus(200);
 }),
 
-router.get("/mapData", (request, response) => {
-    let script1 = "select * from tbDadoSensor, tbSensor,tbLocal where fkSensor=tbSensor.codSensor and fkLocal=codLocal "
+    router.get("/mapData", (request, response) => {
+        let script1 = "select * from tbDadoSensor, tbSensor,tbLocal where fkSensor=tbSensor.codSensor and fkLocal=codLocal "
+        db.conectar().then(async () => {
+
+
+            return await db.sql.query(script1)
+                .then((res) => {
+
+
+                    response.send(res);
+                }).catch(error => {
+                    console.log(error);
+                });
+
+
+        }).catch(erro => {
+
+            console.error(`Erro ao tentar registrar aquisição na base: ${erro}`);
+
+        }).finally(() => {
+            try {
+                // db.sql.close();
+            } catch (e) {
+
+            }
+        });
+    }
+
+
+
+    )
+
+// --------------------------------------------------------------------
+
+router.get("/mapData/:dias", (request, response) => {
+    let dias = request.params.dias;
+    dias=(24*60*60*1000)*dias;
+    let agora = new Date();
+    agora.setTime(agora.getTime()-dias);
+
+    let ano = agora.getFullYear();
+    let mes = agora.getMonth();
+    let dia = agora.getDate();
+
+    let momento = `${ano}-${mes}-${dia}`;
+    let script1 = `select count (tbDadoSensor.codSensor) as count, fkSensor,distanciaLocal as x,alturaSensor as y,areaCaptacaoLocal as radius from tbDadoSensor, tbSensor,tbLocal where fkSensor=tbSensor.codSensor and fkLocal=codLocal and dataEntradaDado>=${momento} and valorSensor =1 group by fkSensor,distanciaLocal, alturaSensor,areaCaptacaoLocal`;
+
+
     db.conectar().then(async () => {
 
 
@@ -169,44 +215,41 @@ router.get("/mapData", (request, response) => {
         console.error(`Erro ao tentar registrar aquisição na base: ${erro}`);
 
     }).finally(() => {
-        try {
-            // db.sql.close();
-        } catch (e) {
-
-        }
+        db.sql.close();
     });
 }
 
-   
+
 
 )
+// ==============================================================
 
 router.get("/mapaDash/:id", (request, response) => {
-    let teste =request.params.id;
+    let teste = request.params.id;
 
     let retorno = `SELECT * FROM tbDadoSensor WHERE fkSensor =${teste}`
-    db.conectar().then(async ()=>{
+    db.conectar().then(async () => {
         return await db.sql.query(retorno)
-        .then((res)=>{
-            
-            let ultimoregistro = res.recordset[res.recordset.length-1];
-            response.json({
-                valorSensor: ultimoregistro.valorSensor,
-                dataEntradaDado:ultimoregistro.dataEntradaDado,
-            })
+            .then((res) => {
 
-           
+                let ultimoregistro = res.recordset[res.recordset.length - 1];
+                response.json({
+                    valorSensor: ultimoregistro.valorSensor,
+                    dataEntradaDado: ultimoregistro.dataEntradaDado,
+                })
 
-        }).catch(error=>{
-            console.log(error);
-        });
 
-    }).catch(erro=>{
+
+            }).catch(error => {
+                console.log(error);
+            });
+
+    }).catch(erro => {
         console.log(`erro ao tentar selecionar aquisicao na base : ${erro}`);
 
-    }).finally(()=>{
+    }).finally(() => {
         db.sql.close();
     });
-})  
+})
 
 module.exports = router;

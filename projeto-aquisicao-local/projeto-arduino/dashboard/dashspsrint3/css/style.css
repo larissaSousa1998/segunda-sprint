@@ -7,6 +7,20 @@ body{
     background: rgba(226, 226, 226, 0.527);
 }
 
+#telarelatorio{
+    background-image: url("../imagem/2.jpg");
+    height: 800px;
+    width: 90%;
+    margin-left: 16%;
+    background-repeat: no-repeat;
+    
+}
+
+.linkmenu{
+    text-decoration: none;
+    color: white;
+}
+
 .menu{
     width: 15%;
     height: 100vh;

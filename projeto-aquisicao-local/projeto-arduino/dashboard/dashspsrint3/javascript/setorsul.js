@@ -8,7 +8,7 @@ var config_sul = {
             label: "Switch x Time",
             type: 'line',
             borderColor: ['#ae3f3f'],
-            backgroundColor: ['red']
+            backgroundColor: ['white']
         }]
     },
     options: {
