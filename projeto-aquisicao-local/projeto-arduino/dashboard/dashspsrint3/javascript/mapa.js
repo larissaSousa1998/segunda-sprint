@@ -3,14 +3,14 @@
     
     let interval;
     var heatmapInstance = h337.create({
-        container: document.querySelector("#modalMapa"),
+        container: document.querySelector("#heatmapContainer"),
     });
 
     setInterval(() => {
         console.log('resetou');
         clearInterval(interval);
         map();
-    }, 15000);
+    }, 500);
     
     map();
 
@@ -32,7 +32,7 @@
                 if (datao) {
 
                     var points = [];
-                    var max = 100;
+                    var max = 80;
                     var min = 0;
                     var width = 850;
                     var height = 490;

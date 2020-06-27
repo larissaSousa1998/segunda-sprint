@@ -85,6 +85,14 @@ body{
     height: 600px;
 }
 
+#telaMapa{
+    background-image: url("../imagem/2.jpg");
+    background-size: 84%;
+    background-size: cover;
+    width: 1040px;
+    height: 600px;
+}
+
 
 .menu .item-menu p{
     padding-left: 5px; 

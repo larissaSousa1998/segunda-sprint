@@ -102,7 +102,7 @@ router.post('/sendData', (request, response) => {
 
 
 
-    const registros_mantidos_tabela_sensor = 1000;
+    const registros_mantidos_tabela_sensor = 3000;
 
 
 
@@ -183,18 +183,23 @@ router.post('/sendData', (request, response) => {
 
 // --------------------------------------------------------------------
 
-router.get("/mapData/:dias", (request, response) => {
+router.get("/novarota/:dias", (request, response) => {
     let dias = request.params.dias;
     dias=(24*60*60*1000)*dias;
     let agora = new Date();
     agora.setTime(agora.getTime()-dias);
 
     let ano = agora.getFullYear();
-    let mes = agora.getMonth();
+    let mes = agora.getMonth()+1;
     let dia = agora.getDate();
 
     let momento = `${ano}-${mes}-${dia}`;
-    let script1 = `select count (tbDadoSensor.codSensor) as count, fkSensor,distanciaLocal as x,alturaSensor as y,areaCaptacaoLocal as radius from tbDadoSensor, tbSensor,tbLocal where fkSensor=tbSensor.codSensor and fkLocal=codLocal and dataEntradaDado>=${momento} and valorSensor =1 group by fkSensor,distanciaLocal, alturaSensor,areaCaptacaoLocal`;
+    let script1 = `select count (tbDadoSensor.codSensor) as count, fkSensor,distanciaLocal as x,alturaSensor as y,areaCaptacaoLocal as radius from tbDadoSensor, tbSensor,tbLocal
+    where fkSensor=tbSensor.codSensor and fkLocal=codLocal and
+     dataEntradaDado between '${momento} 00:00:00' and '${momento} 23:59:59' and 
+     valorSensor =1 group by 
+   fkSensor,distanciaLocal, alturaSensor,areaCaptacaoLocal`;
+   console.log(momento);
 
 
     db.conectar().then(async () => {
