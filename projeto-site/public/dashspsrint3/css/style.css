@@ -7,6 +7,11 @@ body{
     background: rgba(226, 226, 226, 0.527);
 }
 
+body a{
+    text-decoration: none;
+    color: white;
+}
+
 #telarelatorio{
     background-image: url("../imagem/2.jpg");
     height: 800px;

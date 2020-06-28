@@ -1,10 +1,10 @@
 
 
-const fksensor =1;
-var context_leste = document.getElementById("graficoleste").getContext("2d");
+const fksensor =2;
+var context_norte = document.getElementById("graficonorte").getContext("2d");
 
 
-var config_leste = {
+var config_norte = {
     type: 'line',
     data: {
         datasets: [{
@@ -39,7 +39,7 @@ var config_leste = {
     }
 };
 
-let chartleste = new Chart(context_leste, config_leste);
+let chartnorte = new Chart(context_norte, config_norte);
 
 function testando() {
 
@@ -49,7 +49,7 @@ function testando() {
     http.send(null);
     var alo = JSON.parse(http.responseText);
  
-    plotar(alo.valorSensor, chartleste);
+    plotar(alo.valorSensor, chartnorte);
 }
 
 function plotar(valorsensor, grafico, ) {

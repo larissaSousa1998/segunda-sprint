@@ -150,7 +150,7 @@ router.post('/sendData', (request, response) => {
 }),
 
     router.get("/mapData", (request, response) => {
-        let script1 = "select * from tbDadoSensor, tbSensor,tbLocal where fkSensor=tbSensor.codSensor and fkLocal=codLocal "
+        let script1 = "select * from tbDadoSensor, tbSensor,tbLocal where fkSensor=tbSensor.codSensor and fkLocal=codLocal and tbDadoSensor.codSensor>13000"
         db.conectar().then(async () => {
 
 

@@ -6,19 +6,18 @@ var config = {
 	type: 'doughnut',
 	data: {
 		datasets: [{
-			data: [1, 1, 1, 1],
+			data: [1,1,1,1],
 			backgroundColor: [
 				window.chartColors = "rgb(35, 197, 62)",
-				window.chartColors = "#0078d7",
-				window.chartColors = "rgb(255,165,36)",
-				window.chartColors = "rgba(197,35,42)"
+				// window.chartColors = "#0078d7",
+				// window.chartColors = "rgb(255,165,36)",
+				// window.chartColors = "rgba(197,35,42)"
 			],
 		}],
 		labels: [
-			'Novos passageiros',
-			'Movimentação constante',
-			'Movimentação lenta',
-			'Paralisação'
+			
+			'Movimentação geral',
+			
 		]
 	},
 	options: {
@@ -37,6 +36,7 @@ var config = {
 
 function generateRandomData() {
 	let value_1 = parseInt(Math.random() * 70) + 1;
+	
 	let value_2 = parseInt(Math.random() * 70) + 1;
 	let value_3 = parseInt(Math.random() * 70) + 1;
 	let value_4 = parseInt(Math.random() * 70) + 1;
@@ -96,10 +96,10 @@ setInterval(() => {
 }, 1000);
 
 
-window.onload = function () {
-	var ctx = document.getElementById('chart-area').getContext('2d');
-	window.myDoughnut = new Chart(ctx, config);
+// window.onload = function () {
+// 	var ctx = document.getElementById('chart-area').getContext('2d');
+// 	window.myDoughnut = new Chart(ctx, config);
 
-};
+// };
 
 

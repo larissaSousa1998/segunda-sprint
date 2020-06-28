@@ -1,10 +1,7 @@
+var context_sul = document.getElementById("graficosul").getContext("2d");
+const fksensor=4;
 
-
-const fksensor =1;
-var context_leste = document.getElementById("graficoleste").getContext("2d");
-
-
-var config_leste = {
+var config_sul = {
     type: 'line',
     data: {
         datasets: [{
@@ -39,7 +36,7 @@ var config_leste = {
     }
 };
 
-let chartleste = new Chart(context_leste, config_leste);
+var chartsul = new Chart(context_sul, config_sul);
 
 function testando() {
 
@@ -49,7 +46,7 @@ function testando() {
     http.send(null);
     var alo = JSON.parse(http.responseText);
  
-    plotar(alo.valorSensor, chartleste);
+    plotar(alo.valorSensor, chartsul);
 }
 
 function plotar(valorsensor, grafico, ) {

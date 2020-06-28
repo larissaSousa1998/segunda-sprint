@@ -1,17 +1,14 @@
+var context_oeste = document.getElementById("graficooeste").getContext("2d");
+fksensor=3;
 
-
-const fksensor =1;
-var context_leste = document.getElementById("graficoleste").getContext("2d");
-
-
-var config_leste = {
+var config_oeste = {
     type: 'line',
     data: {
         datasets: [{
             label: "Switch x Time",
             type: 'line',
             borderColor: ['#ae3f3f'],
-            backgroundColor: ['white']
+            backgroundColor: ['orange']
         }]
     },
     options: {
@@ -39,8 +36,7 @@ var config_leste = {
     }
 };
 
-let chartleste = new Chart(context_leste, config_leste);
-
+var chartoeste = new Chart(context_oeste, config_oeste);
 function testando() {
 
    
@@ -49,7 +45,7 @@ function testando() {
     http.send(null);
     var alo = JSON.parse(http.responseText);
  
-    plotar(alo.valorSensor, chartleste);
+    plotar(alo.valorSensor, chartoeste);
 }
 
 function plotar(valorsensor, grafico, ) {

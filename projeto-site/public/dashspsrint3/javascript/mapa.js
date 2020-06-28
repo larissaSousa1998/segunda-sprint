@@ -1,88 +1,90 @@
 
 
     
-    let interval;
-    var heatmapInstance = h337.create({
-        container: document.querySelector("#heatmapContainer"),
-    });
-
-    setInterval(() => {
-        console.log('resetou');
-        clearInterval(interval);
-        map();
-    }, 20000);
+    // <script src="node_modules/heatmap.js/build/heatmap.js"></script>
+  
+        let interval;
+        var heatmapInstance = h337.create({
+            container: document.querySelector("#heatmapContainer"),
+        });
     
-    map();
-
-    function map(reset) {
-        let amount = [];
-        interval  = setInterval(() => {
-
-            let result;
-            var http = new XMLHttpRequest();
-            const url = 'http://localhost:3000/api/mapData'
-            http.open("get", url);
-            http.responseType = "text";
-            http.send();
-            http.onreadystatechange = (res) => {
-                let datao;
-                try {
-                    datao = JSON.parse(http.responseText);
-                } catch (e) { }
-                if (datao) {
-
-
-                    var points = [];
-                    var max = 80;
-                    var min = 0;
-                    var width = 850;
-                    var height = 490;
-
-                    if(reset == 'yay'){
-                        console.log(points);
-                    }
-
-                    for (let d of datao.recordset) {
-                        let achou = false;
-                        let value;
-                        console.log(d);
-                        for (let s of amount) {
-                            if (s.id == d.fkLocal) {
-                                s.value += d.valorSensor/10;
-                                achou = true;
-                                break;
+        setInterval(() => {
+            console.log('resetou');
+            clearInterval(interval);
+            map();
+        }, 20000);
+        
+        map();
+    
+        function map(reset) {
+            let amount = [];
+            interval  = setInterval(() => {
+    
+                let result;
+                var http = new XMLHttpRequest();
+                const url = 'http://localhost:3000/api/mapData'
+                http.open("get", url);
+                http.responseType = "text";
+                http.send();
+                http.onreadystatechange = (res) => {
+                    let datao;
+                    try {
+                        datao = JSON.parse(http.responseText);
+                    } catch (e) { }
+                    if (datao) {
+                        console.log(datao);
+    
+                        let points = [];
+                        var max = 200;
+                        var min = 0;
+                        var width = 850;
+                        var height = 490;
+    
+                        if(reset == 'yay'){
+                            console.log(points);
+                        }
+    
+                        for (let d of datao.recordset) {
+                            let achou = false;
+                            let value;
+                            for (let s of amount) {
+                                if (s.id == d.fkLocal) {
+                                    s.value += d.valorSensor;
+                                    achou = true;
+                                    break;
+                                }
                             }
-                        }
-                        if (!achou) {
-                            amount.push({ id: d.fkLocal ? d.fkLocal : 0, value: d.valorSensor ? d.valorSensor/10 : 1 });
-                        }
-
-                        for (let s of amount) {
-                            if (s.id == d.fkLocal) {
-                                value = s.value;
-                                break;
+                            if (!achou) {
+                                amount.push({ id: d.fkLocal ? d.fkLocal : 0, value: d.valorSensor ? d.valorSensor : 10 });
                             }
+    
+                            for (let s of amount) {
+                                if (s.id == d.fkLocal) {
+                                    value = s.value;
+                                    break;
+                                }
+                            }
+    
+                            points.push({
+                                x: d.distanciaLocal, y: d.alturaSensor, value: value, radius: d.areaCaptacaoLocal * 20,
+                            })
+    
                         }
-
-                        points.push({
-                            x: d.distanciaLocal, y: d.alturaSensor, value: value, radius: d.areaCaptacaoLocal * 20,
-                        })
-
+    
+    
+                        var data = {
+                            max: max,
+                            min: min,
+                            data: points,
+                        };
+    
+                        heatmapInstance.setData(data);
                     }
-
-
-                    var data = {
-                        max: max,
-                        min: min,
-                        data: points,
-                    };
-
-                    heatmapInstance.setData(data);
+    
+    
                 }
-
-
-            }
-        }, 200);
-    }
-
-
+            }, 500);
+        }
+    
+    
+  
