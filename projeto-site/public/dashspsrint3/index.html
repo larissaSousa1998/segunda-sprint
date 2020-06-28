@@ -14,6 +14,8 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
 	<link rel="stylesheet" href="./css/style.css">
+	
+	<script src="https://cdn.zingchart.com/zingchart.min.js"></script>
 	<script type="text/javascript" src="../funcoes.js"></script>
 	<style>
 
@@ -77,7 +79,7 @@
 	<!-- **************************************************************** -->
 
 	<section class="principal">
-		<span id="Mapa" onclick="abremapa()"><i class="material-icons"  >map</i></span>
+		<span id="Mapa" onclick="abremapa(),iniciamapa()"><i class="material-icons"  >map</i></span>
 		
 		<div id="dashboard">
 			<div id="top">
@@ -186,7 +188,7 @@
 				</div>
 
 				<div id="grafico4">
-					<canvas id="chart-area" style="transition: 0.5s;"></canvas>
+					<div id="chart-area" style="transition: 0.5s;"></div>
 				</div>
 			</div>
 		</div>

@@ -1,56 +1,164 @@
-var context = document.getElementById("chart-area").getContext("2d");
-context.canvas.width = 600;
-context.canvas.height = 350;
-// rgb(35, 197, 62)
-var config = {
-	type: 'doughnut',
-	data: {
-		datasets: [{
-			data: [1,1,1,1],
-			backgroundColor: [
-				window.chartColors = "rgb(35, 197, 62)",
-				// window.chartColors = "#0078d7",
-				// window.chartColors = "rgb(255,165,36)",
-				// window.chartColors = "rgba(197,35,42)"
-			],
-		}],
-		labels: [
-			
-			'Movimentação geral',
-			
-		]
-	},
-	options: {
-		responsive: true,
-		title: {
-			display: true,
-			text: 'Ocorrencias dentro da estação',
-			fontSize: 16,
-		},
-		animation: {
-			animateScale: true,
-			animateRotate: true
-		}
-	}
+window.feed = function (callback) {
+  var tick = {};
+  tick.plot0 = Math.floor((Math.random() * 89) + 10);
+  if (tick.plot0 >= 80) {
+    
+  }
+  callback(JSON.stringify(tick));
 };
 
+var myConfig = {
+  type: "gauge",
+  globals: {
+    fontSize: 15
+  },
+  plotarea: {
+    marginTop: 100
+  }, plot: {
+    size: '30%',
+    valueBox: {
+      placement: 'center',
+      text: '%v', //default
+      fontSize: 15,
+      rules: [{
+        rule: '%v <= 10',
+        text: '%v<br>Very Low'
+      },
+      {
+        rule: '%v > 10 && %v <= 20',
+        text: '%v<br>Very Low'
+      }, {
+        rule: '%v > 20 && %v <= 30',
+        text: '%v<br>Low'
+      }, {
+        rule: '%v > 30 && %v <= 40',
+        text: '%v<br>Low'
+      }, {
+        rule: '%v > 40 && %v <= 50',
+        text: '%v<br>Medium'
+      }, {
+        rule: '%v > 50 && %v <= 60',
+        text: '%v<br>Medium'
+      }, {
+        rule: '%v > 60 && %v <= 70',
+        text: '%v<br>High'
+      }, {
+        rule: '%v > 70 && %v <= 80',
+        text: '%v<br>Very high'
+      }, {
+        rule: '%v > 80 && %v <= 90',
+        text: '%v<br>Very high'
+      }, {
+        rule: '%v > 90 && %v <= 100',
+        text: '%v<br>Ultra high'
+      }
+      ]
+    }
+  },
+  tooltip: {
+    borderRadius: 5
+  },
+  scaleR: {
+    aperture: 180,
+    minValue: 10,
+    maxValue: 100,
+    step: 10,
+    center: {
+      visible: false
+    },
+    tick: {
+      visible: true
+    },
+    item: {
+      offsetR: 0,
+      rules: [{
+        rule: '%i == 1',
+        offsetX: 15
+      }]
+    },
+    labels: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
+    ring: {
+      size: 20,
+      rules: [{
+        rule: '%v <= 10',
+        backgroundColor: 'red'
+      },
+      {
+        rule: '%v >= 20 && %v < 30',
+        backgroundColor: '#ff3300'
+      }, {
+        rule: '%v >= 30 && %v < 40',
+        backgroundColor: '#ff9933'
+      }, {
+        rule: '%v >= 40 && %v < 50',
+        backgroundColor: 'orange'
+      }, {
+        rule: '%v >= 50 && %v < 60',
+        backgroundColor: '#ffff00'
+      }, {
+        rule: '%v >= 60 && %v < 70',
+        backgroundColor: '#ccff33'
+      }, {
+        rule: '%v >= 70 && %v < 80',
+        backgroundColor: '#ccff66'
+      }, {
+        rule: '%v >= 80 && %v < 90',
+        backgroundColor: '#66ff66'
+      }, {
+        rule: '%v >= 90 && %v < 100',
+        backgroundColor: '#66ff99'
+      },
+      {
+        rule: '%v >= 100',
+        backgroundColor: '#00ffff'
+      }
+      ]
+    }
+  },
+  refresh: {
+    type: "feed",
+    transport: "js",
+    url: "feed()",
+    interval: 1500,
+    resetTimeout: 1000
+  },
+  series: [{
+    values: [10], // starting value
+    backgroundColor: 'black',
+    indicator: [2, 2, 2, 2, 0.5],
+    animation: {
+      effect: 2,
+      method: 1,
+      sequence: 4,
+      speed: 900
+    },
+  }]
+};
+
+zingchart.render({
+  id: 'chart-area',
+  data: myConfig,
+  height: 450,
+  width: '85%'
+});
+
 function generateRandomData() {
-	let value_1 = parseInt(Math.random() * 70) + 1;
+	let value_1 = parseInt(Math.random() * 99) + 1;
 	
-	let value_2 = parseInt(Math.random() * 70) + 1;
-	let value_3 = parseInt(Math.random() * 70) + 1;
-	let value_4 = parseInt(Math.random() * 70) + 1;
+	let value_2 = parseInt(Math.random() * 99) + 1;
+	let value_3 = parseInt(Math.random() * 99) + 1;
+	let value_4 = parseInt(Math.random() * 99) + 1;
 
-	let values = [value_1, value_2, value_3, value_4];
+	
 
-	config.data.datasets[0].data = values;
+	
 
 	textodado1.innerHTML = `${value_1}%`;
 	textodado2.innerHTML = `${value_2}%`;
 	textodado3.innerHTML = `${value_3}%`;
 	textodado4.innerHTML = `${value_4}%`;
 
-	myDoughnut.update();
+
 }
 
 setInterval(() => {
@@ -98,7 +206,7 @@ setInterval(() => {
 
 // window.onload = function () {
 // 	var ctx = document.getElementById('chart-area').getContext('2d');
-// 	window.myDoughnut = new Chart(ctx, config);
+// 	window.gouge = new Chart(ctx, config_ponteiro);
 
 // };
 

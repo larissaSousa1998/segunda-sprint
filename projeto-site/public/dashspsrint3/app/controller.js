@@ -109,7 +109,7 @@ router.post('/sendData', (request, response) => {
 
 
 
-    let fk = parseInt(Math.random() * 12 + 1);
+    let fk = parseInt(Math.random() * 130 + 1);
 
     let script1 = `
     INSERT into tbDadoSensor (valorSensor, dataEntradaDado, fkSensor)
@@ -150,7 +150,7 @@ router.post('/sendData', (request, response) => {
 }),
 
     router.get("/mapData", (request, response) => {
-        let script1 = "select * from tbDadoSensor, tbSensor,tbLocal where fkSensor=tbSensor.codSensor and fkLocal=codLocal and tbDadoSensor.codSensor>13000"
+        let script1 = "select * from tbDadoSensor, tbSensor,tbLocal where fkSensor=tbSensor.codSensor and fkLocal=codLocal"
         db.conectar().then(async () => {
 
 

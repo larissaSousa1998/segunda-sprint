@@ -1,4 +1,6 @@
 
+const contador1 = 0;
+let valorLeste = document.querySelector("#textodado1");
 
 const fksensor =1;
 var context_leste = document.getElementById("graficoleste").getContext("2d");
@@ -50,6 +52,14 @@ function testando() {
     var alo = JSON.parse(http.responseText);
  
     plotar(alo.valorSensor, chartleste);
+    if(alo.valorSensor==1){
+
+        contador>=100? contador=contador:contador+=10;
+    } else{
+        
+        contador<=0? contador=contador:contador-=10;
+    }
+    valorLeste.innerHTML=contador.value;
 }
 
 function plotar(valorsensor, grafico, ) {

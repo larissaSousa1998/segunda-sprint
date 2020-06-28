@@ -53,7 +53,8 @@
 			<i id="setaD" onclick="open_nav()" style="display: none;" class="fas fa-chevron-right btn_menu"></i>
 
 		</div>
-		<div>
+		<div id="Opcoes">
+			<span>Selecione o intervalo da consulta em dias</span>
 			<select name="" id="intervalo" onchange=" trocar()">
 				<option value=""></option>
 				<option value="0">Hoje</option>
@@ -68,7 +69,18 @@
 		</div>
 	</nav>
 
-	<div id="telarelatorio">
+	<div id="caixarelatorio">
+			<div id="modalrelatorio">
+				
+				<div id="heatmapContainerWrapper">
+	
+					<div id="heatmapContainerRelatorio">
+					</div>
+				</div>
+	
+			</div>
+		</div>
+	
 
 	</div>
 
@@ -111,7 +123,7 @@
 
 		let interval;
 		var maparelatorio = h337.create({
-			container: document.querySelector("#telarelatorio"),
+			container: document.querySelector("#heatmapContainerRelatorio"),
 		});
 
 
@@ -140,7 +152,7 @@
 					var points = [];
 					var max = 10;
 					var min = 0;
-					var width = 850;
+					var width = 1000;
 					var height = 490;
 
 					for (let i = 0; i < dados.recordset.length; i++) {
@@ -161,7 +173,9 @@
 
 					let data = {
 						max: max,
-						data: points
+						data: points,
+						width:width,
+						height:height
 					}
 					maparelatorio.setData(data);
 
