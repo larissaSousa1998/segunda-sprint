@@ -220,160 +220,16 @@ body{
 
 }
 
-#caixasetor1{
-    display: flex;
-    position: fixed;
-    width: 100vw;
-    height: 80vh;
-    position: absolute;
-    margin-top: 100px;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    display: none;
-    z-index: 12;
-    margin-right: 140px;
-}
 
-#fechasetor1{
-    height: 50px;
-    background: white;
-    color: black;
-    border: none;
-    font-size: 20px;
-    right: 140px;
-    cursor: pointer;
-    position: absolute;
-
-}
-
-#modalsetor1{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background:white;
-    font-family:  'Roboto', sans-serif;
-    border-radius: 10px;
-    margin-right: 150px;
-    position: relative;
-}
 
 /* --------------------------------------------------------------------------- */
-#caixasetor2{
-    display: flex;
-    position: fixed;
-    width: 100vw;
-    height: 80vh;
-    position: absolute;
-    margin-top: 100px;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    display: none;
-    z-index: 12;
-    margin-right: 140px;
-}
 
-#fechasetor2{
-    height: 50px;
-    background: white;
-    color: black;
-    border: none;
-    font-size: 20px;
-    right: 140px;
-    cursor: pointer;
-    position: absolute;
-
-}
-
-#modalsetor2{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background:white;
-    font-family:  'Roboto', sans-serif;
-    border-radius: 10px;
-    margin-right: 150px;
-    position: relative;
-}
 
 /* ------------------------------------------------------------------------------ */
 
-#caixasetor3{
-    display: flex;
-    position: fixed;
-    width: 100vw;
-    height: 80vh;
-    position: absolute;
-    margin-top: 100px;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    display: none;
-    z-index: 12;
-    margin-right: 140px;
-}
-
-#fechasetor3{
-    height: 50px;
-    background: white;
-    color: black;
-    border: none;
-    font-size: 20px;
-    right: 140px;
-    cursor: pointer;
-    position: absolute;
-}
-
-#modalsetor3{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background:white;
-    font-family:  'Roboto', sans-serif;
-    border-radius: 10px;
-    margin-right: 150px;
-    position: relative;
-}
 
 /* ------------------------------------------------------------------- */
 
-#caixasetor4{
-    display: flex;
-    position: fixed;
-    width: 100vw;
-    height: 80vh;
-    position: absolute;
-    margin-top: 100px;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    display: none;
-    z-index: 12;
-    margin-right: 140px;
-}
-
-#fechasetor4{
-    height: 50px;
-    background: white;
-    color: black;
-    border: none;
-    font-size: 20px;
-    right: 140px;
-    cursor: pointer;
-    position: absolute;
-}
-
-#modalsetor4{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    background:white;
-    font-family:  'Roboto', sans-serif;
-    border-radius: 10px;
-    margin-right: 150px;
-    position: relative;
-}
 
 
 .descricaomodal{

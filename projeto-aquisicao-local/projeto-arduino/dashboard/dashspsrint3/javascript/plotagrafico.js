@@ -1,10 +1,11 @@
     let contador=1;
-    let contador1=0;
+    
+    // let contador1=0;
 
-    let media1=0;
-    let media2=0;
-    let media3=0;
-    let media4=0;
+    // let media1=0;
+    // let media2=0;
+    // let media3=0;
+    // let media4=0;
 function testando(fksensor) {
 
     let grafico = null;

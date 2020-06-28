@@ -10,7 +10,7 @@
         console.log('resetou');
         clearInterval(interval);
         map();
-    }, 500);
+    }, 20000);
     
     map();
 
@@ -31,6 +31,7 @@
                 } catch (e) { }
                 if (datao) {
 
+
                     var points = [];
                     var max = 80;
                     var min = 0;
@@ -44,15 +45,16 @@
                     for (let d of datao.recordset) {
                         let achou = false;
                         let value;
+                        console.log(d);
                         for (let s of amount) {
                             if (s.id == d.fkLocal) {
-                                s.value += d.valorSensor;
+                                s.value += d.valorSensor/10;
                                 achou = true;
                                 break;
                             }
                         }
                         if (!achou) {
-                            amount.push({ id: d.fkLocal ? d.fkLocal : 0, value: d.valorSensor ? d.valorSensor : 10 });
+                            amount.push({ id: d.fkLocal ? d.fkLocal : 0, value: d.valorSensor ? d.valorSensor/10 : 1 });
                         }
 
                         for (let s of amount) {

@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Flow</title>
+    <link rel="icon" href="../imagem/logo.png" type="imagem/icon">
+    <script src="https://kit.fontawesome.com/508f88ea40.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+    <!--importando a biblioteca chartJS-->
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <!--importando a biblioteca zingchart-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+
+    </style>
+</head>
+
+<!-- ****************************NAV********************************** -->
+
+<body>
+    
+    </div>
+    <nav id="menu" class="menu">
+        <div class="item-menu" id="logo">
+            <h1>Flow</h1>
+        </div>
+        <a href="../relatórios.html" class="linkmenu">
+            <div id="div_icon1" class="item-menu" id="active">
+                <i class="material-icons icon_nav">dashboard</i>
+                <p class="letra" id="frase_dash_nav">Dashboard</p>
+            </div>
+        </a>
+        <a href="../relatórios.html" class="linkmenu">
+            <div id="div_icon2" class="item-menu">
+
+                <i class="material-icons icon_nav">description</i>
+                <p class="letra" id="frase_rel_nav">Relatórios</p>
+
+            </div>
+        </a>
+
+        <a href="#" class="linkmenu">
+            <div id="div_icon3" class="item-menu">
+                <i class="material-icons">drafts</i>
+                <p class="letra" id="frase_contato_nav">Contato</p>
+            </div>
+        </a>
+        <!-- BOTÕES PARA ABRIR E FECHAR MENU LATERAL -->
+        <div class="nav-seta">
+            <i id="setaE" onclick="close_nav()" class="fas fa-chevron-left btn_menu"></i>
+            <i id="setaD" onclick="open_nav()" style="display: none;" class="fas fa-chevron-right btn_menu"></i>
+
+        </div>
+
+    </nav>
+<section class="principal">
+    
+    <div id="DadosLeste">
+            <canvas id="graficoleste"></canvas>
+        </div>
+    </section>
+</body>
+
+<script src="setorleste.js"></script>
+<script>
+    function close_nav() {
+        menu.style.width = '8%';
+        setaE.style.display = 'none';
+        setaD.style.display = 'block';
+        frase_rel_nav.style.display = 'none';
+        frase_dash_nav.style.display = 'none';
+        frase_contato_nav.style.display = 'none';
+        div_icon1.style.marginLeft = '47%';
+        div_icon2.style.marginLeft = '47%';
+        div_icon3.style.marginLeft = '47%';
+        logo.style.paddingLeft = '0'
+    }
+    //Função para ABRIR nav-menu
+    function open_nav() {
+        menu.style.width = '15%';
+        setaD.style.display = 'none';
+        setaE.style.display = 'block';
+        frase_rel_nav.style.display = 'block';
+        frase_dash_nav.style.display = 'block';
+        frase_contato_nav.style.display = 'block';
+        div_icon1.style.marginLeft = '0';
+        div_icon2.style.marginLeft = '0';
+        div_icon3.style.marginLeft = '0';
+    }
+</script>
+
+</html>
