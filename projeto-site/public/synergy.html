@@ -277,7 +277,7 @@
 
                     <div class="name-membro">
                         <h3 class="name">Julia Lima</h3>
-                        <p class="funtion">Desenvolvedor</p>
+                        <p class="funtion">Desenvolvedora</p>
                     </div>
 
                     <div class="social-medias">
@@ -310,7 +310,7 @@
 
                     <div class="name-membro">
                         <h3 class="name">Larissa Custódio</h3>
-                        <p class="funtion">Desenvolvedor</p>
+                        <p class="funtion">Desenvolvedora</p>
                     </div>
 
                     <div class="social-medias">
@@ -441,7 +441,7 @@
                             <p>BEM-VINDO</p>
                             
                             <img src="img/undraw_dev_focus_b9xo.png" alt="Moça utilizando o computador" class='welcome-img'> 
-                            <p class='welcome-text'>Olá! Realize seu login preenchendo os campos abaixo</p>
+                            <p id='msgerro' class='welcome-text'>Olá! Realize seu login preenchendo os campos abaixo</p>
                          </div>
                     </div>
 
@@ -458,15 +458,15 @@
                         <div id="form-login">
                             <form id="form_login" method="post" onsubmit="return entrar()">
                             <div class='div-input'>
-                                <input type="text" class="input-login" id="login" name="login" placeholder="Login">
+                                <input type="text" class="input-login" id="login" name="login" placeholder="Login" style="width: 220px;">
                             </div>
     
                             <div class='div-input'>
-                                <input type="password" class="input-login" id="senha" name="senha" placeholder="Senha">
+                                <input type="password" class="input-login" id="senha" name="senha" placeholder="Senha" style="width: 220px;">
                             </div>
     
                             <div class='div-input'>
-                                <button class="btn-login" id="btn_entrar">Entrar</button>
+                                <button class="btn-login" id="btn_entrar" style="width: 220px;">Entrar</button>
                             </div>
     
                             <p>
@@ -475,8 +475,8 @@
                             </p>
                             </form>
 
-                            <img src="aguarde.gif" id="img_aguarde" style="display: none;">
-                            <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+                            <img src="login-gif-images-8.gif" id="img_aguarde" style="display: none; height: 100px;" >
+                            <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;"></div>
 
                         </div>
                     </div>
@@ -586,11 +586,8 @@ function entrar() {
         } else {
 
             console.log('Erro de login!');
-
-            response.text().then(texto => {
-                console.error(texto);
-                finalizar_aguardar(texto);
-            });
+            alert("Login e/ou senha inválido(s)");
+            window.location.href = 'http://localhost:3333/synergy.html';
         }
     });
 
