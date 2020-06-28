@@ -456,24 +456,28 @@
                         <!-- FORMULÁRIO LOGIN -->
                         <div id="remover-cadastro">
                         <div id="form-login">
-                        
+                            <form id="form_login" method="post" onsubmit="return entrar()">
                             <div class='div-input'>
-                                <input type="text" class="input-login" id="emaillogin" placeholder="Login">
+                                <input type="text" class="input-login" id="login" name="login" placeholder="Login">
                             </div>
     
                             <div class='div-input'>
-                                <input type="password" class="input-login" id="senhalogin" placeholder="Senha">
+                                <input type="password" class="input-login" id="senha" name="senha" placeholder="Senha">
                             </div>
     
                             <div class='div-input'>
-                                <button class="btn-login" id="id-btn">Entrar</button>
+                                <button class="btn-login" id="btn_entrar">Entrar</button>
                             </div>
     
                             <p>
                                 <span class='form-link'>Esqueci a senha | </span> 
                                 <span class="form-link" onclick="removerlogin()"> Cadastre-se</span>
                             </p>
-    
+                            </form>
+
+                            <img src="aguarde.gif" id="img_aguarde" style="display: none;">
+                            <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+
                         </div>
                     </div>
 
@@ -560,4 +564,51 @@
     <script src="js/modal.js"></script>
 </body>
 </html>
+<script>
+function entrar() {
+    aguardar();
+    var formulario = new URLSearchParams(new FormData(form_login));
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        body: formulario
+    }).then(resposta => {
+        
+        if (resposta.ok) {
+
+            resposta.json().then(json => {
+
+                sessionStorage.login_usuario_meuapp = json.loginUsuario;
+                sessionStorage.nome_usuario_meuapp = json.nomeUsuario;
+                
+                window.location.href = '/dashspsrint3/index.html';
+            });
+
+        } else {
+
+            console.log('Erro de login!');
+
+            response.text().then(texto => {
+                console.error(texto);
+                finalizar_aguardar(texto);
+            });
+        }
+    });
+
+    return false;
+}
+
+function aguardar() {
+    btn_entrar.disabled = true;
+    img_aguarde.style.display = 'block';
+    div_erro.style.display = 'none';
+}
+
+function finalizar_aguardar(resposta) {
+    btn_entrar.disabled = false;
+    img_aguarde.style.display= 'none';
+    div_erro.style.display = 'block';
+    div_erro.innerHTML = resposta;
+}
+
+</script>
 
