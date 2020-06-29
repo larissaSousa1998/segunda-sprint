@@ -14,12 +14,8 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
 	<link rel="stylesheet" href="./css/style.css">
-	
 	<script src="https://cdn.zingchart.com/zingchart.min.js"></script>
 	<script type="text/javascript" src="../funcoes.js"></script>
-	<style>
-
-	</style>
 </head>
 <!-- ****************************NAV********************************** -->
 <body>
@@ -35,9 +31,12 @@
 				</div>
 			</div>
 	<nav id="menu" class="menu">
+
 		<div class="item-menu" id="logo">
 			<h1 >Flow</h1>
 		</div>
+
+		<div id="elementPai" class="pai">
 		<a href="./relatórios.html" class="linkmenu">
 		<div id="div_icon1" class="item-menu" id="active">
 			<i class="material-icons icon_nav">dashboard</i>
@@ -53,33 +52,34 @@
 		</div>
 	</a>
 
-	<a href="#" class="linkmenu">
+	<a href="help.html" class="linkmenu">
 		<div id="div_icon3" class="item-menu">
 			<i class="material-icons">drafts</i>
 			<p class="letra" id="frase_contato_nav">Contato</p>
 		</div>
 	</a>
 
-	<a href="#" onclick="logoff()">
-		<div id="div_icon3" class="item-menu">
-			<i class="material-icons">drafts</i>
-			<p class="letra" id="frase_contato_nav">Sair</p>
+	<a href="../synergy.html" onclick="logoff()">
+		<div id="div_icon4" class="item-menu">
+			<i class="material-icons">exit_to_app</i>
+			<p class="letra" id="frase_contato_goout">Sair</p>
 		</div>
-	
+	</div>
 	</a>
 		<!-- BOTÕES PARA ABRIR E FECHAR MENU LATERAL -->
+		<center>
 		<div class="nav-seta">
 			<i id="setaE" onclick="close_nav()" class="fas fa-chevron-left btn_menu"></i>
 			<i id="setaD" onclick="open_nav()" style="display: none;" class="fas fa-chevron-right btn_menu"></i>
-		
 		</div>
+	</center>
 			
 	</nav>
 
 	<!-- **************************************************************** -->
 
 	<section class="principal">
-		<span id="Mapa" onclick="abremapa(),iniciamapa()"><i class="material-icons"  >map</i></span>
+		<span id="Mapa" onclick="abremapa(),iniciamapa()"><i class="material-icons">map</i></span>
 		
 		<div id="dashboard">
 			<div id="top">
@@ -89,7 +89,7 @@
 				</div>
 				<div id="esquerda">
 					<b id="horario"></b>
-					<b id="ano" style="margin-top:10px; "></b>
+					<b id="ano" style="margin-top:10px;"></b>
 				</div>
 			</div>
 
@@ -213,25 +213,35 @@
 				menu.style.width = '8%';
 				setaE.style.display = 'none';
 				setaD.style.display = 'block';
-				frase_rel_nav.style.display = 'none';
-				frase_dash_nav.style.display = 'none';
-				frase_contato_nav.style.display = 'none';
-				div_icon1.style.marginLeft = '47%';
-				div_icon2.style.marginLeft = '47%';
-				div_icon3.style.marginLeft = '47%';
-				logo.style.paddingLeft = '0'
-			}
-			//Função para ABRIR nav-menu
-			function open_nav(){
-				menu.style.width = '15%';
-				setaD.style.display = 'none';
-				setaE.style.display = 'block';
-				frase_rel_nav.style.display = 'block';
-				frase_dash_nav.style.display = 'block';
-				frase_contato_nav.style.display = 'block';
+
 				div_icon1.style.marginLeft = '0';
 				div_icon2.style.marginLeft = '0';
 				div_icon3.style.marginLeft = '0';
+				div_icon4.style.marginLeft = '0';
+				logo.style.paddingLeft = '0';
+
+				frase_rel_nav.style.opacity = '0';
+				frase_dash_nav.style.opacity = '0';
+				frase_contato_nav.style.opacity = '0';
+				frase_contato_goout.style.opacity ='0';
+				elementPai.style.marginLeft = '37%'
+			}
+			//Função para ABRIR nav-menu
+			function open_nav(){
+				menu.style.width = '13%';
+				setaD.style.display = 'none';
+				setaE.style.display = 'block';
+
+				div_icon1.style.marginLeft = '0';
+				div_icon2.style.marginLeft = '0';
+				div_icon3.style.marginLeft = '0';
+				div_icon4.style.marginLeft = '0';
+
+				frase_rel_nav.style.opacity = '1';
+				frase_dash_nav.style.opacity = '1';
+				frase_contato_nav.style.opacity = '1';
+				frase_contato_goout.style.opacity ='1';
+				elementPai.style.marginLeft = '10%'
 			}
 			//Função para obter os dados de temperatura do server
 

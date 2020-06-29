@@ -1,7 +1,8 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
+    /* font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; */
     overflow: hidden;
     color: rgb(70, 70, 70);
     background: rgba(226, 226, 226, 0.527);
@@ -25,10 +26,65 @@ body a{
     color: white;
 }
 
+/***********PÁGINA HELP DESK************/
+.div_desk_help{
+    background-color: #4e73df;
+    float: right;
+    width: 65%;
+    margin-right: 11%;
+    margin-top: 5.5%;
+    height: 600px;
+    box-shadow: grey 0px 0px 8px 4px;
+    border-radius: 20px;
+}
+.img_msn{
+    width: 100%;
+    padding-top: 22%;
+}
+.div_branca{
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    float: right;
+    border-radius: 0px 20px 20px 0px;
+}
+.text{
+    float: left;
+    width: 25%;
+    height: 100%;
+    color: white;
+    margin-left: 10%;
+    padding: 20px;
+    padding-top: 20%;
+}
+.text h1{
+    text-shadow: black 0px 2px 2px;
+}
+.btnHD{
+    background-color: #57b894;
+    float: right;
+    border: white solid 1px;
+    width: 85px;
+    height: 30px;
+    font-size: 15px;
+    margin-top: 5%;
+}
+.btnHD:hover{
+    margin-top: -1px;
+    margin-right: -1px;
+    width: 87px;
+    height: 32px;
+    transition: 0.4s;
+}
+.btnHD a{
+    color: white;
+}
+
+/***********************************/
 .menu{
-    width: 15%;
+    width: 13%;
     height: 100vh;
-    display: flex;
+    display: inline;
     align-items: center;
     flex-direction: column;
     float: left;
@@ -36,21 +92,21 @@ body a{
     left: 0;
     overflow-x: hidden;
     padding-top: 50px;
-    box-shadow: 0px 0px 10px #3030306c;
+    box-shadow: -7px 10px 8px 14px #3030306c;
     background: #4e73df;
     color: white !important;
     transition: 1s;
 }
 
-.letra {
-    animation-name: desaparecer;
+.pai{
+    margin-left: 10%;
+    transition: 1s;
 }
-@keyframes desaparecer{
-    0%{opacity: 1;};
-    50%{opacity: 0.5;};
-    100%{opacity: 0;}
+.letra{
+    opacity: 1;
+    transition: 1s;
 }
-    /**/
+
 .menu .item-menu{
     width: 90%;
     height:60px;
@@ -59,16 +115,15 @@ body a{
     align-items: center;
     border-radius: 5px;
     transition: 0.3s;
-    padding-left: 10px;
     font-weight: 500;
     letter-spacing: 0.8px;
+    transition: 1s;
 }
 
 #logo:hover{
     background: transparent;
     cursor:unset;
 }
-
 
 .menu .item-menu:hover{
     background: #517cfc;
@@ -166,7 +221,6 @@ body a{
     border-radius: 5px;
     display: flex;
     align-items: center;
-    
 }
 
 #card1{
@@ -186,12 +240,12 @@ body a{
 /*aqui*/
 .btn_menu{
     background-color: rgba(255,255,255,0.07);
-    width: 22px;
+    width: 25px;
     height: 31px;
-    padding-left: 19px;
-    padding-top: 16px;
-    margin-top: 45%;
-    border-radius: 26px;
+    padding-left: 9px;
+    padding-top: 14px;
+    margin-top: 50px;
+    border-radius: 100%;
     padding-right: 10px;
     cursor: pointer;
 }
@@ -205,7 +259,6 @@ body a{
     align-items: center;
     justify-content: space-between;
     margin-left: 6%;
-    
 }
 
 .text-card p{
@@ -219,9 +272,8 @@ body a{
 .botoescards{
     border: none;
     width: 120px;
-    
-    height:40px;
-
+    height: 40px;
+    margin-top: 7%;
 }
 
 
@@ -284,11 +336,9 @@ body a{
 
 #caixaMapa{
     display: flex;
-   
     width: 100%;
     height: 100vh;
     position: absolute;
-   
     align-items: center;
     justify-content: center;
     top: 0;
@@ -297,13 +347,9 @@ body a{
     z-index: 12;
    
 }
-
 #caixarelatorio{
-   
-   
     width: 100%;
     height: 100vh;
-    
 }
 
 #Opcoes{
@@ -314,6 +360,7 @@ body a{
     height: 260px;
     background: #0076d72d;
     border-radius: 10px;
+    margin-right: 10px;
 }
 
 
@@ -339,9 +386,14 @@ body a{
 
 
 #fechamapa{
-    height: 50px;
-    background: white;
-    color: black;
+    width: 37px;
+    height: 27px;
+    text-align: center;
+    border-radius: 100%;
+    padding-top: 0.6%;
+    margin-right: -3%;
+    background: #4e73df;
+    color: white;
     border: none;
     font-size: 20px;
     right: 20px;

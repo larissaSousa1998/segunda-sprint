@@ -21,12 +21,11 @@
 
 <body>
 
-
 	<nav id="menu" class="menu">
 		<div class="item-menu" id="logo">
 			<h1>Flow</h1>
 		</div>
-
+		<div id="elementPai" class="pai">
 		<a href="./index.html" class="linkmenu">
 		<div id="div_icon1" class="item-menu" id="active">
 			<i class="material-icons icon_nav">dashboard</i>
@@ -41,17 +40,26 @@
 		</div>
 	</a>
 
-		<a href="" class="linkmenu">
+		<a href="help.html" class="linkmenu">
 		<div id="div_icon3" class="item-menu">
 			<i class="material-icons">drafts</i>
-			<p class="letra" id="frase_contato_nav">Contato</p>
+			<p class="letra" id="frase_contato_goout">Contato</p>
+		</div>
+	</a>
+
+	<a href="../synergy.html" onclick="logoff()">
+		<div id="div_icon4" class="item-menu">
+			<i class="material-icons">exit_to_app</i>
+			<p class="letra" id="frase_contato_goout">Sair</p>
 		</div>
 	</a>
 		<!-- BOTÕES PARA ABRIR E FECHAR MENU LATERAL -->
+		<center>
 		<div class="nav-seta">
 			<i id="setaE" onclick="close_nav()" class="fas fa-chevron-left btn_menu"></i>
 			<i id="setaD" onclick="open_nav()" style="display: none;" class="fas fa-chevron-right btn_menu"></i>
-
+		</center>
+	</div>
 		</div>
 		<div id="Opcoes">
 			<span>Selecione o intervalo da consulta em dias</span>
@@ -93,30 +101,40 @@
 		}
 
 
-		function close_nav() {
-			menu.style.width = '8%';
-			setaE.style.display = 'none';
-			setaD.style.display = 'block';
-			frase_rel_nav.style.display = 'none';
-			frase_dash_nav.style.display = 'none';
-			frase_contato_nav.style.display = 'none';
-			div_icon1.style.marginLeft = '47%';
-			div_icon2.style.marginLeft = '47%';
-			div_icon3.style.marginLeft = '47%';
-			logo.style.paddingLeft = '0'
-		}
-		//Função para ABRIR nav-menu
-		function open_nav() {
-			menu.style.width = '15%';
-			setaD.style.display = 'none';
-			setaE.style.display = 'block';
-			frase_rel_nav.style.display = 'block';
-			frase_dash_nav.style.display = 'block';
-			frase_contato_nav.style.display = 'block';
-			div_icon1.style.marginLeft = '0';
-			div_icon2.style.marginLeft = '0';
-			div_icon3.style.marginLeft = '0';
-		}
+		function close_nav(){
+				menu.style.width = '8%';
+				setaE.style.display = 'none';
+				setaD.style.display = 'block';
+
+				div_icon1.style.marginLeft = '0';
+				div_icon2.style.marginLeft = '0';
+				div_icon3.style.marginLeft = '0';
+				div_icon4.style.marginLeft = '0';
+				logo.style.paddingLeft = '0';
+
+				frase_rel_nav.style.opacity = '0';
+				frase_dash_nav.style.opacity = '0';
+				frase_contato_nav.style.opacity = '0';
+				frase_contato_goout.style.opacity ='0';
+				elementPai.style.marginLeft = '37%'
+			}
+			//Função para ABRIR nav-menu
+			function open_nav(){
+				menu.style.width = '13%';
+				setaD.style.display = 'none';
+				setaE.style.display = 'block';
+
+				div_icon1.style.marginLeft = '0';
+				div_icon2.style.marginLeft = '0';
+				div_icon3.style.marginLeft = '0';
+				div_icon4.style.marginLeft = '0';
+
+				frase_rel_nav.style.opacity = '1';
+				frase_dash_nav.style.opacity = '1';
+				frase_contato_nav.style.opacity = '1';
+				frase_contato_goout.style.opacity ='1';
+				elementPai.style.marginLeft = '10%'
+			}
 
 
 

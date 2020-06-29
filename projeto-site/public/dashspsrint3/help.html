@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow</title>
+    <link rel="icon" href="imagem/logo.png" type="imagem/icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/508f88ea40.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="caixaMapa">
+            <div id="modalMapa">
+                <div id="fechamapa" onclick="fechamapa()">X</div>
+                <div id="heatmapContainerWrapper">
+    
+                    <div id="heatmapContainer">
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+<nav id="menu" class="menu">
+    <div class="item-menu" id="logo">
+        <h1>Flow</h1>
+    </div>
+    <div id="elementPai" class="pai">
+    <a href="./index.html" class="linkmenu">
+    <div id="div_icon1" class="item-menu" id="active">
+        <i class="material-icons icon_nav">dashboard</i>
+        <p class="letra" id="frase_dash_nav">Dashboard</p>
+    </div>
+</a>
+    <a href="./relatórios.html" class="linkmenu">
+    <div id="div_icon2" class="item-menu">
+        
+        <i class="material-icons icon_nav">description</i>
+        <p class="letra" id="frase_rel_nav">Relatórios</p>
+    
+    </div>
+</a>
+
+<a href="help.html" class="linkmenu">
+    <div id="div_icon3" class="item-menu">
+        <i class="material-icons">drafts</i>
+        <p class="letra" id="frase_contato_nav">Contato</p>
+    </div>
+</a>
+
+<a href="../synergy.html" onclick="logoff()">
+    <div id="div_icon4" class="item-menu">
+        <i class="material-icons">exit_to_app</i>
+        <p class="letra" id="frase_contato_goout">Sair</p>
+    </div>
+</a>
+</div>
+    <!-- BOTÕES PARA ABRIR E FECHAR MENU LATERAL -->
+    <center>
+    <div class="nav-seta">
+        <i id="setaE" onclick="close_nav()" class="fas fa-chevron-left btn_menu"></i>
+        <i id="setaD" onclick="open_nav()" style="display: none;" class="fas fa-chevron-right btn_menu"></i>
+    </div>
+</center>
+        
+</nav>
+<!-- **************************************************************** -->
+
+<div class="div_desk_help">
+    <div class="text">
+        <h1>HELP DESK</h1>
+        <p>Entre em contato conosco para solucão de problemas técnicos.
+            Informe-nos seu problema que cuidaremos disso para você!
+        </p>
+        <button class="btnHD"><a href="https://synergy2.on.spiceworks.com/portal/tickets">Solucionar</a></button>
+    </div>
+    <div class="div_branca">
+    <img class="img_msn" src="imagem/mensagem.png" alt="mensagem">
+    </div>
+</div>
+
+
+
+</body>
+</html>
+<script>
+    //Função para FECHAR nav-menu
+			
+    function close_nav(){
+				menu.style.width = '8%';
+				setaE.style.display = 'none';
+				setaD.style.display = 'block';
+				// frase_rel_nav.style.display = 'none';
+				// frase_dash_nav.style.display = 'none';
+				// frase_contato_nav.style.display = 'none';
+				// frase_contato_goout.style.display ='none';
+				div_icon1.style.marginLeft = '0';
+				div_icon2.style.marginLeft = '0';
+				div_icon3.style.marginLeft = '0';
+				div_icon4.style.marginLeft = '0';
+				logo.style.paddingLeft = '0';
+
+				frase_rel_nav.style.opacity = '0';
+				frase_dash_nav.style.opacity = '0';
+				frase_contato_nav.style.opacity = '0';
+				frase_contato_goout.style.opacity ='0';
+				elementPai.style.marginLeft = '37%'
+			}
+			//Função para ABRIR nav-menu
+			function open_nav(){
+				menu.style.width = '13%';
+				setaD.style.display = 'none';
+				setaE.style.display = 'block';
+				// frase_rel_nav.style.display = 'block';
+				// frase_dash_nav.style.display = 'block';
+				// frase_contato_nav.style.display = 'block';
+				// frase_contato_goout.style.display ='block';
+				div_icon1.style.marginLeft = '0';
+				div_icon2.style.marginLeft = '0';
+				div_icon3.style.marginLeft = '0';
+				div_icon4.style.marginLeft = '0';
+
+				frase_rel_nav.style.opacity = '1';
+				frase_dash_nav.style.opacity = '1';
+				frase_contato_nav.style.opacity = '1';
+				frase_contato_goout.style.opacity ='1';
+				elementPai.style.marginLeft = '10%'
+			}
+</script>
